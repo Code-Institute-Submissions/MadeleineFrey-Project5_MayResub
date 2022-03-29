@@ -1,0 +1,30 @@
+html {
+    height: 100%;
+}
+
+body {
+    /* background: url('/media/home-page5.jpg') no-repeat center center fixed; */
+    background: #cbd18f;
+    background-size: cover;
+    height: calc(100vh - 164px);
+    color: #E3B448;
+    font-family: 'Lato';
+}
+
+#my-base-header {
+    background-color: #3a6b35;
+}
+
+#my-navbar {
+    padding: 0; !important
+    
+}
+
+#my-base-header a {
+    color: #E3B448;
+}
+
+.navbar-toggler-icon {
+    color:#E3B448;
+}
+
