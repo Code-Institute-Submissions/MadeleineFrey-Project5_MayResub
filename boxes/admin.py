@@ -1,5 +1,26 @@
 from django.contrib import admin
-from .models import Category, Product
+from .models import Box, Category
 
-admin.site.register(Category)
-admin.site.register(Product)
+# Register your models here.
+
+class BoxAdmin(admin.ModelAdmin):
+    list_display = (
+        'name',
+        'sku',
+        'category',
+        'price',
+        'image',
+    )
+
+    # uncomment later,  ordering = ('sku',)  
+  
+
+
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = (
+        'friendly_name',
+        'name',
+    )
+
+admin.site.register(Box, BoxAdmin)
+admin.site.register(Category, CategoryAdmin)

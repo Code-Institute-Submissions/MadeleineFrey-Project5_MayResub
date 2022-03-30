@@ -5,6 +5,9 @@ from django.db import models
 class Category(models.Model):
     """ Model to store different Categories"""
 
+    class Meta:
+        verbose_name_plural = 'Categories'
+
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
 
@@ -16,7 +19,11 @@ class Category(models.Model):
 
 
 
-class Product(models.Model):
+class Box(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Boxes'
+
     name = models.CharField(max_length=60)
     sku = models.CharField(max_length=12, null=True, blank=True)
     description = models.TextField()
