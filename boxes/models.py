@@ -20,8 +20,11 @@ class Category(models.Model):
 
 
 class Box(models.Model):
+    """ X """
 
     class Meta:
+        """ X """
+        
         verbose_name_plural = 'Boxes'
 
     name = models.CharField(max_length=60)

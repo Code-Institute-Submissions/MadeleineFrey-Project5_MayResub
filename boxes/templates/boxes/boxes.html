@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="container my-my">
+    <div class="row">
+        <div class="col card mb-4  mt-3 left info-box">
+            <div class="card-body ">
+                <h1>Information part</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <hr>
+    </div>
+</div>
+    <div class="container my-container">
+        <div class="row">
+            <div class="col">
+                <div class="container-fluid " style="min-height: 680px">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row">
+                                {% for box in boxes %}
+                                <div class="card box-div" style="width: 18rem;">
+                                    <img src="..." class="card-img-top" alt="..." style="height: 10rem;">
+                                    <div class="card-body">
+                                       <h3> <a href="#"> {{ box.name }} </a> </h3>
+                                        <hr>
+                                        <p class="card-text box-desc">{{ box.description }}</p>
+                                        <!-- number of comments font avsome icon-->
+                                    </div>
+                                  </div>
+                                {% if forloop.counter|divisibleby:3 %}
+                            </div>
+                            <div class="row">
+                                {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
