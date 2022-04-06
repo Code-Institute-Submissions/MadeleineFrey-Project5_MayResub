@@ -35,7 +35,7 @@
                                 <div class="card box-div" style="width: 18rem;">
                                     <img src="..." class="card-img-top" alt="..." style="height: 10rem;">
                                     <div class="card-body">
-                                       <h3> <a href="#"> {{ box.name }} </a> </h3>
+                                       <h3> <a href="{% url 'box_detail' box.id %}"> {{ box.name }} </a> </h3>
                                         <hr>
                                         <p class="card-text box-desc">{{ box.description }}</p>
                                         <!-- number of comments font avsome icon-->

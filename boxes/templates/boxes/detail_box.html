@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="card box-div my-card" style="width: 26rem;">
+                <img src="..." class="card-img-top" alt="..." style="height: 18rem;">
+                <div class="card-body">
+                   <h3>  {{ box.name }} </h3>
+                    <hr>
+                    <p class="card-text box-desc">{{ box.description }}</p>
+                    <!-- number of comments font avsome icon-->
+                </div>
+              </div>
+        </div>
+    </div>
+{% endblock %}

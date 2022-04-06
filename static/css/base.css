@@ -58,3 +58,8 @@ a:hover {
 .box-desc {
     color: #cbd18f;
 }
+
+.my-card {
+    margin: 0 auto;
+    margin-top: 120px;
+}
