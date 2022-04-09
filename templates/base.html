@@ -62,10 +62,10 @@
                 Boxes
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">All meat</a>
-                <a class="dropdown-item" href="#">Only Fish</a>
+                <a class="dropdown-item" href="{% url 'boxes' %}?category=meat">All meat</a>
+                <a class="dropdown-item" href="{% url 'boxes' %}?category=fish">Only Fish</a>
                 <a class="dropdown-item" href="{% url 'boxes' %}">All Boxes</a>
-                <a class="dropdown-item" href="#">SPECIAL</a>
+                <a class="dropdown-item" href="{% url 'boxes' %}?category=special">SPECIAL</a>
               </div>
             </li>
             <li class="nav-item">

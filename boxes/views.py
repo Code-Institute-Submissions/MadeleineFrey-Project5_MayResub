@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
-from .models import Box
+from .models import Box, Category
 
 # Create your views here.
 
@@ -7,6 +7,16 @@ from .models import Box
 def all_boxes(request):
     """ A view to show all products """
     boxes = Box.objects.all()
+    category = None
+
+    if 'category' in request.GET:
+        category = request.GET['category']
+
+        categories = request.GET['category'].split(',')
+        boxes = boxes.filter(category__name__in=categories)
+        categories = Category.objects.filter(name__in=categories)
+
+    
     context = {
         'boxes': boxes,
     }
