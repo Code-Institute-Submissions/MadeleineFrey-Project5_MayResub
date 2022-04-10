@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="overlay my-bag-bg"></div>
+<div class="container mb-2 my-bag-bg my-my">
+    <div class="row">
+        <div class="col card mb-4  mt-3 left info-box">
+            <div class="card-body ">
+                <h1>Shopphing Bag</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <hr>
+        </div>
+    </div>
+        <div class="row my-bag-bg">
+            <div class="col">
+                <div class="col card mb-4  mt-3 left info-box" >
+                {% if bag_items %}
+                    <div class="table-responsive rounded"></div>
+                {% else %}
+                    <p class="lead mb-5">Your bag is empty.</p>
+                    <!-- add style to button -->
+                    <a href="{% url 'boxes' %}" class="btn btn-outline-black btn-lg">
+                        <span class="icon">
+                            <!-- icon -->
+                        </span>
+                        <span class="text-uppercase my-text-color">Keep Shopping</span>
+                    </a>
+                {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
