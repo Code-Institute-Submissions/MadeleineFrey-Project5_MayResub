@@ -65,6 +65,8 @@ a:hover {
 }
 
 /* taken from video */
+
+
 .overlay {
 	height: 100%;
 	width: 100%;
@@ -87,4 +89,13 @@ a:hover {
 #my-shipping {
     color: gray;
     font-size: small;
+}
+
+.my-form {
+    width: 26rem;
+    margin: 0 auto;
+}
+
+.my-form-input {
+    width: 5rem;
 }
