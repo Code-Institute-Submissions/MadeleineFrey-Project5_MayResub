@@ -52,7 +52,7 @@
                                                         </div>
                                                         <div class=" cart_info_col">
                                                             <div class="cart_item_title">Quantity</div>
-                                                            <form class="form update-form" method="POST" action="">
+                                                            <form class="form update-form" method="POST" action="{% url 'adjust_bag' box.box_id %}">
                                                                 {% csrf_token %}
                                                                 <div class="form-group">
                                                                     <div class="input-group">
@@ -79,10 +79,10 @@
                                                                     </div>
                                                                 </div>
                                                             </form>
-                                                            <div class="my-modify-button">
-                                                                <a class="update-link text-info bag-item-quantity"><small>Update</small></a>
-                                                                <a class="remove-box text-danger float-right bag-item-quantity" id="remove_{{ box.box_id }}"><small>Remove</small></a>
-                                                            </div>
+                                                            
+                                                            <a class="update-link text-info bag-item-quantity "><small class="my-text-color">Update</small></a>
+                                                            <a class="remove-box text-danger float-right bag-item-quantity" id="remove_{{ box.box_id }}"><small>Remove</small></a>
+                                                            
 
                                                         </div>
                                                         <div class="cart_box_price cart_info_col">
@@ -158,7 +158,7 @@
     </div>
     {% endblock %}
 
-    {% block postloadjs %}
+{% block postloadjs %}
 {{ block.super }}
 {% include 'boxes/includes/quantity_input_script.html' %}
 
@@ -169,13 +169,12 @@
         form.submit();
     })
 
-    // Remove item and reload on click
-    $('.remove-item').click(function(e) {
+    // Remove box and reload on click
+    $('.remove-box').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
-        var itemId = $(this).attr('id').split('remove_')[1];
-        var size = $(this).data('size');
-        var url = `/bag/remove/${itemId}`;
-        var data = {'csrfmiddlewaretoken': csrfToken, 'size': size};
+        var boxId = $(this).attr('id').split('remove_')[1];
+        var url = `/bag/remove/${boxId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken, };
 
         $.post(url, data)
          .done(function() {
