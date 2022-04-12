@@ -1,4 +1,7 @@
-from django.shortcuts import render, redirect, reverse 
+from django.shortcuts import (
+    render, redirect, reverse, HttpResponse, get_object_or_404)
+
+from boxes.models import Box
 
 # Create your views here.
 def view_bag(request):
@@ -38,3 +41,17 @@ def adjust_bag(request, box_id):
 
     request.session['bag'] = bag
     return redirect(reverse('bag'))
+
+def remove_from_bag(request, box_id):
+    """ Removes the specified product from the cart """
+
+    try:
+        box = get_object_or_404(Box, pk=box_id)
+        bag = request.session.get('bag', {})
+        bag.pop(box_id)
+
+        request.session['bag'] = bag
+        return HttpResponse(status=200)
+
+    except Exception as e:
+        return HttpResponse(status=500)
