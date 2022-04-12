@@ -109,3 +109,11 @@ a:hover {
     color: #dea624;
     height: 2px;
 }
+
+.bag-item-quantity {
+    
+    margin: 3px;
+
+    padding: 10;
+   
+}

@@ -35,34 +35,59 @@
 
                 {% for box in bag_items %}
                 <div class="table-responsive rounded">
-                    <div class="cart_section">
+                    <div class="bag-section">
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-lg-10 offset-lg-1">
-                                    <div class="cart_container">
-                                        <div class="cart_items">
-                                            <ul class="cart_list">
-                                                <li class="cart_item clearfix">
-                                                    <div class="cart_item_image"><img src="#" alt="">
+                                    <div class="bag-container">
+                                        <div class="bag-items">
+                                            <ul class="bag-list">
+                                                <li class="bag-item clearfix">
+                                                    <div class="bag-item-image"><img src="#" alt="">
                                                     </div>
-                                                    <div class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
-                                                        <div class="cart_item_name cart_info_col">
-                                                            <div class="cart_item_title">Name</div>
+                                                    <div class="bag-item-info d-flex flex-md-row flex-column justify-content-between">
+                                                        <div class="bag-item-name bag-info-col">
+                                                            <div class="bag-item-title">Name</div>
                                                             <div class="cart_item_text"> {{ box.box.name }} </div>
                                                         </div>
-                                                        <div class="cart_item_color cart_info_col">
-                                                            <div class="cart_item_title">Size</div>
-                                                            <div class="cart_item_text">
-                                                                add later
-                                                            </div>
-                                                        </div>
-                                                        <div class="cart_item_quantity cart_info_col">
+                                                        <div class=" cart_info_col">
                                                             <div class="cart_item_title">Quantity</div>
-                                                            <div class="cart_item_text"> {{ box.quantity }} </div>
+                                                            <form class="form update-form" method="POST" action="">
+                                                                {% csrf_token %}
+                                                                <div class="form-group">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <button class="decrement-qty btn btn-sm btn-black rounded-0" 
+                                                                                data-box_id="{{ box.box_id }}" id="decrement-qty_{{ box.box_id }}">
+                                                                                <span>
+                                                                                    <i class="fas fa-minus fa-sm">X-</i>
+                                                                                </span>
+                                                                            </button>
+                                                                        </div>
+                                                                        <input class="form-control form-control-sm qty_input" type="number"
+                                                                            name="quantity" value="{{ box.quantity }}" min="1" max="99"
+                                                                            data-box_id="{{ box.box_id }}"
+                                                                            id="id_qty_{{ box.box_id }}">
+                                                                        <div class="input-group-append">
+                                                                            <button class="increment-qty btn btn-sm btn-black rounded-0"
+                                                                                data-box_id="{{ box.box_id }}" id="increment-qty_{{ box.box_id }}">
+                                                                                <span>
+                                                                                    <i class="fas fa-plus fa-sm"> X+</i>
+                                                                                </span>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                            <div class="my-modify-button">
+                                                                <a class="update-link text-info bag-item-quantity"><small>Update</small></a>
+                                                                <a class="remove-box text-danger float-right bag-item-quantity" id="remove_{{ box.box_id }}"><small>Remove</small></a>
+                                                            </div>
+
                                                         </div>
-                                                        <div class="cart_item_price cart_info_col">
-                                                            <div class="cart_item_title">Price</div>
-                                                            <div class="cart_item_text"> {{ box.box.price }}</div>
+                                                        <div class="cart_box_price cart_info_col">
+                                                            <div class="cart_box_title">Price</div>
+                                                            <div class="cart_box_text"> {{ box.box.price }}</div>
                                                         </div>
                                                         
                                                     </div>
@@ -132,3 +157,30 @@
         </div>
     </div>
     {% endblock %}
+
+    {% block postloadjs %}
+{{ block.super }}
+{% include 'boxes/includes/quantity_input_script.html' %}
+
+<script type="text/javascript">
+    // Update quantity on click
+    $('.update-link').click(function(e) {
+        var form = $(this).prev('.update-form');
+        form.submit();
+    })
+
+    // Remove item and reload on click
+    $('.remove-item').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var size = $(this).data('size');
+        var url = `/bag/remove/${itemId}`;
+        var data = {'csrfmiddlewaretoken': csrfToken, 'size': size};
+
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    })
+</script>
+{% endblock %}
