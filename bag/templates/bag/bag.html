@@ -17,7 +17,7 @@
     <div class="row">
         <div class="col card mb-4  mt-4 left info-box">
             <div class="card-body ">
-                <h1>Shopphing Bag</h1>
+                <h1>Shoppig Cart<small> (1 item in your cart) </small></h1>
             </div>
         </div>
     </div>
@@ -30,7 +30,9 @@
     <div class="row my-bag-bg ">
         <div class="col">
             <div class="col card mb-4  mt-3 left info-box">
+                
                 {% if bag_items %}
+
                 {% for box in bag_items %}
                 <div class="table-responsive rounded">
                     <div class="cart_section">
@@ -38,7 +40,6 @@
                             <div class="row">
                                 <div class="col-lg-10 offset-lg-1">
                                     <div class="cart_container">
-                                        <div class="cart_title">Shoppig Cart<small> (1 item in your cart) </small></div>
                                         <div class="cart_items">
                                             <ul class="cart_list">
                                                 <li class="cart_item clearfix">
