@@ -104,3 +104,8 @@ a:hover {
 .my-form-input {
     width: 5rem;
 }
+
+#bag-hr {
+    color: #dea624;
+    height: 2px;
+}

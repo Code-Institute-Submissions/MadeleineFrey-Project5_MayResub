@@ -13,7 +13,7 @@
 {% block content %}
 
 <div class="overlay my-bag-bg"></div>
-<div class="container mb-2 my-bag-bg my-my {% if grand_total %} info-box-more-v {% else %}  {% endif %}">
+<div class="container mb-2 my-bag-bg my-my {% if grand_total %} info-box-more {% else %}  {% endif %}">
     <div class="row">
         <div class="col card mb-4  mt-4 left info-box">
             <div class="card-body ">
@@ -27,14 +27,96 @@
             <hr>
         </div>
     </div>
-        <div class="row my-bag-bg ">
-            <div class="col">
-                <div class="col card mb-4  mt-3 left info-box" >
+    <div class="row my-bag-bg ">
+        <div class="col">
+            <div class="col card mb-4  mt-3 left info-box">
                 {% if bag_items %}
-                    <div class="table-responsive rounded">
-                        {{ bag_items }}
+                {% for box in bag_items %}
+                <div class="table-responsive rounded">
+                    <div class="cart_section">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-10 offset-lg-1">
+                                    <div class="cart_container">
+                                        <div class="cart_title">Shoppig Cart<small> (1 item in your cart) </small></div>
+                                        <div class="cart_items">
+                                            <ul class="cart_list">
+                                                <li class="cart_item clearfix">
+                                                    <div class="cart_item_image"><img src="#" alt="">
+                                                    </div>
+                                                    <div class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
+                                                        <div class="cart_item_name cart_info_col">
+                                                            <div class="cart_item_title">Name</div>
+                                                            <div class="cart_item_text"> {{ box.box.name }} </div>
+                                                        </div>
+                                                        <div class="cart_item_color cart_info_col">
+                                                            <div class="cart_item_title">Size</div>
+                                                            <div class="cart_item_text">
+                                                                add later
+                                                            </div>
+                                                        </div>
+                                                        <div class="cart_item_quantity cart_info_col">
+                                                            <div class="cart_item_title">Quantity</div>
+                                                            <div class="cart_item_text"> {{ box.quantity }} </div>
+                                                        </div>
+                                                        <div class="cart_item_price cart_info_col">
+                                                            <div class="cart_item_title">Price</div>
+                                                            <div class="cart_item_text"> {{ box.box.price }}</div>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <hr id="bag-hr">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                {% else %}
+                    {% endfor %}
+
+                    <div>
+                        <div class="order_total">
+                            <div class="cart_item_total cart_info_col">
+                                <div class="cart_item_title">Total</div>
+                                <div class="cart_item_text">${{ total|floatformat:2 }}</div>
+                            </div>
+                            <div class="cart_item_shipping cart_info_col">
+                                <div class="cart_item_title">Shipping</div>
+                                <div class="cart_item_text">${{ delivery|floatformat:2 }}</div>
+                            </div>
+                            <div class="order_total_content text-md-right">
+                                <div class="order_total_title">Order Total:</div>
+                                <div class="order_total_amount"> ${{ grand_total|floatformat:2 }}</div>
+                            </div>
+                            {% if free_delivery_delta > 0 %}
+                            <div class="order_total_content text-md-right">
+                                <div class="order_delivery_title">
+                                    <p class="mb-1 text-danger">
+                                    You could get free delivery by spending just <strong>${{ free_delivery_delta }}</strong> more!
+                                </p>
+                            </div>
+                            </div>
+                            {% endif %}
+                    </div>
+                    <div>
+                        <a href="{% url 'boxes' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                            <span class="icon">
+                                <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="text-uppercase">Keep Shopping</span>
+                        </a>
+                        <a href="" class="btn btn-black rounded-0 btn-lg">
+                            <span class="text-uppercase">Secure Checkout</span>
+                            <span class="icon">
+                                <i class="fas fa-lock"></i>
+                            </span>
+                        </a>
+                    </div>
+                    {% else %}
                     <p class="lead mb-5">Your bag is empty.</p>
                     <!-- add style to button -->
                     <a href="{% url 'boxes' %}" class="btn btn-outline-black btn-lg">
@@ -43,10 +125,9 @@
                         </span>
                         <span class="text-uppercase my-text-color">Keep Shopping</span>
                     </a>
-                {% endif %}
+                    {% endif %}
                 </div>
             </div>
         </div>
     </div>
-{% endblock %}
-
+    {% endblock %}
