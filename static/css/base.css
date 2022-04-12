@@ -48,6 +48,11 @@ body {
     background-color: #3a6b35;
 }
 
+.info-box-more {
+    padding-top: 50px;
+}
+
+
 a {
     color: #E3B448;
 }

@@ -13,9 +13,9 @@
 {% block content %}
 
 <div class="overlay my-bag-bg"></div>
-<div class="container mb-2 my-bag-bg my-my">
+<div class="container mb-2 my-bag-bg my-my {% if grand_total %} info-box-more-v {% else %}  {% endif %}">
     <div class="row">
-        <div class="col card mb-4  mt-3 left info-box">
+        <div class="col card mb-4  mt-4 left info-box">
             <div class="card-body ">
                 <h1>Shopphing Bag</h1>
             </div>
@@ -27,7 +27,7 @@
             <hr>
         </div>
     </div>
-        <div class="row my-bag-bg">
+        <div class="row my-bag-bg ">
             <div class="col">
                 <div class="col card mb-4  mt-3 left info-box" >
                 {% if bag_items %}
