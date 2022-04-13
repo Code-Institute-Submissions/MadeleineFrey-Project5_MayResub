@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="overlay my-bag-bg"></div>
+<div class="container  my-bag-bg my-my {% if grand_total %} info-box-more {% else %}  {% endif %}">
+    <div class="row">
+        <div class="col card left info-box">
+            <div class="card-body ">
+                <h1>Shoppig Cart</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <hr>
+        </div>
+    </div>
+    <div class="row my-bag-bg ">
+        <div class="col">
+            <div class="col left info-box">
+
+            </div>
+        </div>
+    </div>
+</div>
+    {% endblock %}
+
