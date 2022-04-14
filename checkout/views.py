@@ -1,14 +1,14 @@
 from django.shortcuts import render, redirect, reverse
-# add later from django.contrib import messages
 
 from .forms import OrderForm
 
 
 def checkout(request):
+    """ X """
+    
     bag = request.session.get('bag', {})
     if not bag:
-            # add messages.error(request, "There's nothing in your bag at the moment")
-        return redirect(reverse('products'))
+        return redirect(reverse('boxes'))
 
     order_form = OrderForm()
     template = 'checkout/checkout.html'
