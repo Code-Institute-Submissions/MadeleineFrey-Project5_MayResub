@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse
 
 from .forms import OrderForm
-
+from bag.contexts import bag_contents
 
 def checkout(request):
     """ X """
