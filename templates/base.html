@@ -68,12 +68,6 @@
                 <a class="dropdown-item" href="{% url 'boxes' %}?category=special">SPECIAL</a>
               </div>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Register</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Login</a>
-            </li>
             </ul>
           </div>
           <div  class="tex-lg-right">
@@ -82,7 +76,26 @@
                 <!-- show if user is authenticated -->
                 <!-- add superuser profile -->
                 <!-- Add icon -->
-                <a class="nav-link" href="#">Profile</a>
+                <li class="list-inline-item dropdown">
+                  <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <div class="text-center">
+                          <div><i class="fas fa-user fa-lg"></i></div>
+                          <p class="my-0">My Account</p>
+                      </div>
+                  </a>
+                  <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                      {% if request.user.is_authenticated %}
+                          {% if request.user.is_superuser %}
+                              <a href="" class="dropdown-item">Product Management</a>
+                          {% endif %}
+                          <a href="" class="dropdown-item">My Profile</a>
+                          <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                      {% else %}
+                          <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                          <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                      {% endif %}
+                  </div>
+              </li>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'bag' %}">Bag</a>

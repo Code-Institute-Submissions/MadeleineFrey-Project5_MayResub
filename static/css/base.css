@@ -115,5 +115,13 @@ a:hover {
     margin: 3px;
 
     padding: 10;
-   
+}
+
+.my-green-text {
+    color: #3a6b35;
+}
+
+.my-allauth-content {
+    width: 100%;
+    margin: 0 auto;
 }

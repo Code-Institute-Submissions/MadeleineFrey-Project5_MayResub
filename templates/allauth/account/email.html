@@ -4,7 +4,26 @@
 
 {% block head_title %}{% trans "Account" %}{% endblock %}
 
-{% block content %}
+{% block inner_content %}
+<div class="overlay"></div>
+<div class="container my-my {% if grand_total %} info-box-more {% else %}  {% endif %}">
+  <div class="row">
+    <div class="col card mb-4 left mt-3 info-box">
+      <div class="card-body ">
+        <h1>Emails</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <hr>
+  </div>
+</div>
+<div class="row my-bag-bg ">
+  <div class="col">
+    <div class="col card mb-4  mt-3 left info-box">
+
     <h1>{% trans "E-mail Addresses" %}</h1>
 {% if user.emailaddress_set.all %}
 <p>{% trans 'The following e-mail addresses are associated with your account:' %}</p>
@@ -49,10 +68,12 @@
 
     <form method="post" action="{% url 'account_email' %}" class="add_email">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form|crispy }}
         <button name="action_add" type="submit">{% trans "Add E-mail" %}</button>
     </form>
-
+    </div>
+  </div>
+</div>
 {% endblock %}
 
 
