@@ -125,3 +125,23 @@ a:hover {
     width: 100%;
     margin: 0 auto;
 }
+
+.img-fp {
+    margin-left: 80px;
+    background: url('/media/home-page5.jpg') no-repeat center center;
+    height: 500px;
+    width: 500px;
+}
+
+.my-mt {
+    margin-top: 200px;
+}
+
+.my-m-all {
+    margin: 15px;
+}
+
+.about-title {
+    color: black;
+    font-size: large;
+}

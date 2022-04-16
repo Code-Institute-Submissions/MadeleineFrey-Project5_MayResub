@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="container my-my {% if grand_total %} info-box-more {% else %}  {% endif %}">
+    <div class="row">
+        <div class="col card mb-4  mt-3 left info-box">
+            <div class="card-body ">
+                <h1>Welcome</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <hr>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-5 my-m-all">
+        <div class=" info-box">
+            <div class="card-body"></div>
+              <h4>Our Team</h4>
+              <hr>
+              <table style="width:100%">
+                <tr>
+                  <td class="about-title">Name:</td>
+                  <td>Jimin</td>
+                  
+                </tr>
+                <tr>
+                  <td class="about-title">Role:</td>
+                  <td>Leader</td>
+                  
+                </tr>
+                <tr>
+                    <td class="about-title">Description:</td>
+                    <td> 
+                        <p>
+                            texttext text texttext
+                            texttexttexttext texttext vtext
+                            text texttexttext text
+                            texttext text texttext
+                            texttexttexttext texttext vtext
+                            text texttexttext text
+                        </p>
+                    </td>
+                    
+                  </tr>
+              </table>
+              <hr>
+        </div>
+          </div>
+  
+    <div class="col-lg-3 pr-2 my-m-all">
+        <div class="card info-box">
+            <div class="card-body">
+              <h4>Our Locations</h4>
+              <hr>
+              <table style="width:100%">
+                <tr>
+                  <td class="about-title">Adress:</td>
+                  <td>123 street 67</td>
+                </tr>
+              </table>
+              <hr>
+            </div>
+          </div>
+    </div>
+    <div class="col-lg-3 pr-2 my-m-all">
+        <div class="card info-box">
+            <div class="card-body">
+              <h4>Contact Information</h4>
+              <hr>
+              <div>
+                <table style="width:100%">
+                    <tr>
+                      <td class="about-title">Email</td>
+                      <td>ncncnnn@cncn.com</td>
+                    
+                    </tr>
+                    <tr>
+                      <td class="about-title">Phone </td>
+                      <td>12345678</td>
+                    </tr>
+                  </table>
+                  <hr>
+              </div>
+            </div>
+          </div>
+    </div>
+ </div>
+
+{% endblock %}
