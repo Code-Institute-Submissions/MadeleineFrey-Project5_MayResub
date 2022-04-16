@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 
-from .models import AboutUs
+from .models import Team
 # Create your views here.
 
 def index(request):
@@ -9,9 +9,9 @@ def index(request):
 
     return render(request, 'home/index.html')
 
-def about_us(request):
+def team(request):
     """ A view to """
-    team = AboutUs.objects.all()
+    team = Team.objects.all()
     
     context = {
         'team': team,
