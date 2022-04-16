@@ -87,6 +87,15 @@
               <table style="width:100%">
                 {% for  location in xlocation %}
                 <tr>
+                  <td>
+                    {% if request.user.is_superuser %}
+                                                <small class="ml-3">
+                                                    <a href="{% url 'edit_location' location.id %}">Edit</a>
+                                                </small>
+                                            {% endif %}
+                  </td>
+                </tr>
+                <tr>
                   <td class="about-title">Adress:</td>
                   <td>{{ location.address}}</td>
                 </tr>

@@ -129,3 +129,31 @@ def edit_team(request, member_id):
     }
 
     return render(request, template, context)
+
+@login_required
+def edit_location(request, location_id):
+    """ Edit a box in the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    location = get_object_or_404(Location, pk=location_id)
+    if request.method == 'POST':
+        form = LocationForm(request.POST, request.FILES, instance=location)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated box!')
+            return redirect(reverse('about_us'))
+        else:
+            messages.error(request, 'Failed to update box. Please ensure the form is valid.')
+    else:
+        form = LocationForm(instance=location)
+        messages.info(request, f'You are editing {location.address}')
+
+    template = 'home/edit_location.html'
+    context = {
+        'form': form,
+        'location': location,
+    }
+
+    return render(request, template, context)
