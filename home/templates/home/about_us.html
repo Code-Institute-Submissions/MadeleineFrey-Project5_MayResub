@@ -27,9 +27,14 @@
 </div>
 <div class="row">
     <div class="col-lg-5 my-m-all">
-        <div class=" info-box">
+        <div class="card info-box">
             <div class="card-body"></div>
               <h4>Our Team</h4>
+              {% if request.user.is_authenticated %}
+                          {% if request.user.is_superuser %}
+                              <a href="{% url 'add_team' %}" class="dropdown-item">Add Team Member</a>
+                          {% endif %}
+                          {% endif %}
               <hr>
               <table style="width:100%">
                 {% for  member in xteam %}
@@ -62,6 +67,7 @@
         <div class="card info-box">
             <div class="card-body">
               <h4>Our Locations</h4>
+              
               <hr>
               <table style="width:100%">
                 {% for  location in xlocation %}
