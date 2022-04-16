@@ -36,6 +36,12 @@
                                     <img src="..." class="card-img-top" alt="..." style="height: 10rem;">
                                     <div class="card-body">
                                        <h3> <a href="{% url 'box_detail' box.id %}"> {{ box.name }} </a> </h3>
+                                       {% if request.user.is_superuser %}
+                                                <small class="ml-3">
+                                                    <a href="{% url 'edit_box' box.id %}">Edit</a> | 
+                                                    <a class="text-danger" href="{% url 'delete_box' box.id %}">Delete</a>
+                                                </small>
+                                            {% endif %}
                                         <hr>
                                         <p class="card-text box-desc">{{ box.description }}</p>
                                         <!-- number of comments font avsome icon-->

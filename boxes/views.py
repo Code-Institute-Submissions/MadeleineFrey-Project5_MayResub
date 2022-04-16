@@ -43,9 +43,9 @@ def add_box(request):
     if request.method == 'POST':
         form = BoxForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            box = form.save()
             messages.success(request, 'Successfully added product!')
-            return redirect(reverse('add_box'))
+            return redirect(reverse('box_detail', args=[box.id]))
         else:
             messages.error(request, 'Failed to add product. Please ensure the form is valid.')
     else:
@@ -80,3 +80,10 @@ def edit_box(request, box_id):
     }
 
     return render(request, template, context)
+
+def delete_box(request, box_id):
+    """ Delete a box from the store """
+    box = get_object_or_404(Box, pk=box_id)
+    box.delete()
+    messages.success(request, 'Box deleted!')
+    return redirect(reverse('boxes'))
