@@ -1,5 +1,8 @@
-from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib import messages
+
 from .models import Box, Category
+from .forms import BoxForm
 
 # Create your views here.
 
@@ -34,3 +37,23 @@ def detail_box(request, box_id):
     }
 
     return render(request, 'boxes/detail_box.html', context)
+
+def add_box(request):
+    """ Add a product to the store """
+    if request.method == 'POST':
+        form = BoxForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully added product!')
+            return redirect(reverse('add_box'))
+        else:
+            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+    else:
+        form = BoxForm()
+        
+    template = 'boxes/add_box.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
