@@ -32,30 +32,27 @@
               <h4>Our Team</h4>
               <hr>
               <table style="width:100%">
+                {% for  member in xteam %}
                 <tr>
                   <td class="about-title">Name:</td>
-                  <td>Jimin</td>
+                  <td>{{member.name}}</td>
                   
                 </tr>
                 <tr>
                   <td class="about-title">Role:</td>
-                  <td>Leader</td>
+                  <td>{{member.role}}</td>
                   
                 </tr>
                 <tr>
                     <td class="about-title">Description:</td>
                     <td> 
                         <p>
-                            texttext text texttext
-                            texttexttexttext texttext vtext
-                            text texttexttext text
-                            texttext text texttext
-                            texttexttexttext texttext vtext
-                            text texttexttext text
+                           {{ member.description }}
                         </p>
                     </td>
                     
                   </tr>
+                  {% endfor %}
               </table>
               <hr>
         </div>
@@ -67,10 +64,12 @@
               <h4>Our Locations</h4>
               <hr>
               <table style="width:100%">
+                {% for  location in xlocation %}
                 <tr>
                   <td class="about-title">Adress:</td>
-                  <td>123 street 67</td>
+                  <td>{{ location.address}}</td>
                 </tr>
+                {% endfor %}
               </table>
               <hr>
             </div>
@@ -83,20 +82,22 @@
               <hr>
               <div>
                 <table style="width:100%">
+                  {% for  member in xcontact %}
                     <tr>
                         <td class="about-title">Name</td>
-                        <td>Chen</td>
-                      
+                        <td>{{ member.name }}
+                        </td>
                       </tr>
                     <tr>
                       <td class="about-title">Email</td>
-                      <td>ncncnnn@cncn.com</td>
+                      <td>{{ member.email }}</td>
                     
                     </tr>
                     <tr>
                       <td class="about-title">Phone </td>
-                      <td>12345678</td>
+                      <td>{{ member.phone_number }}</td>
                     </tr>
+                    {% endfor %}
                   </table>
                   <hr>
               </div>
