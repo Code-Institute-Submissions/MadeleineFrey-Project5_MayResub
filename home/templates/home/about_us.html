@@ -89,6 +89,11 @@
         <div class="card info-box">
             <div class="card-body">
               <h4>Contact Information</h4>
+              {% if request.user.is_authenticated %}
+                          {% if request.user.is_superuser %}
+                              <a href="{% url 'add_contact' %}" class="dropdown-item">Add Contact Information</a>
+                          {% endif %}
+                          {% endif %}
               <hr>
               <div>
                 <table style="width:100%">
