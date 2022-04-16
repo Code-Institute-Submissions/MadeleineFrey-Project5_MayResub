@@ -39,6 +39,15 @@
               <table style="width:100%">
                 {% for  member in xteam %}
                 <tr>
+                  <td>
+                    {% if request.user.is_superuser %}
+                                                <small class="ml-3">
+                                                    <a href="{% url 'edit_team' member.id %}">Edit</a>
+                                                </small>
+                                            {% endif %}
+                  </td>
+                </tr>
+                <tr>
                   <td class="about-title">Name:</td>
                   <td>{{member.name}}</td>
                   
@@ -57,10 +66,12 @@
                     </td>
                     
                   </tr>
+                  
                   {% endfor %}
               </table>
               <hr>
         </div>
+       
           </div>
   
     <div class="col-lg-3 pr-2 my-m-all">

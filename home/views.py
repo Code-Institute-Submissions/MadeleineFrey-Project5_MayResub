@@ -101,3 +101,31 @@ def add_contact(request):
     }
 
     return render(request, template, context)
+
+@login_required
+def edit_team(request, member_id):
+    """ Edit a box in the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    member = get_object_or_404(Team, pk=member_id)
+    if request.method == 'POST':
+        form = TeamForm(request.POST, request.FILES, instance=member)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated box!')
+            return redirect(reverse('about_us'))
+        else:
+            messages.error(request, 'Failed to update box. Please ensure the form is valid.')
+    else:
+        form = TeamForm(instance=member)
+        messages.info(request, f'You are editing {member.name}')
+
+    template = 'home/edit_team.html'
+    context = {
+        'form': form,
+        'member': member,
+    }
+
+    return render(request, template, context)
