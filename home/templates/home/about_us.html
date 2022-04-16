@@ -67,7 +67,11 @@
         <div class="card info-box">
             <div class="card-body">
               <h4>Our Locations</h4>
-              
+              {% if request.user.is_authenticated %}
+                          {% if request.user.is_superuser %}
+                              <a href="{% url 'add_location' %}" class="dropdown-item">Add Location</a>
+                          {% endif %}
+                          {% endif %}
               <hr>
               <table style="width:100%">
                 {% for  location in xlocation %}
