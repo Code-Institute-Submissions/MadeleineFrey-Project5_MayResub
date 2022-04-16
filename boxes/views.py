@@ -57,3 +57,26 @@ def add_box(request):
     }
 
     return render(request, template, context)
+
+def edit_box(request, box_id):
+    """ Edit a box in the store """
+    box = get_object_or_404(Box, pk=box_id)
+    if request.method == 'POST':
+        form = BoxForm(request.POST, request.FILES, instance=box)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated box!')
+            return redirect(reverse('box_detail', args=[box.id]))
+        else:
+            messages.error(request, 'Failed to update box. Please ensure the form is valid.')
+    else:
+        form = BoxForm(instance=box)
+        messages.info(request, f'You are editing {box.name}')
+
+    template = 'boxes/edit_box.html'
+    context = {
+        'form': form,
+        'box': box,
+    }
+
+    return render(request, template, context)
