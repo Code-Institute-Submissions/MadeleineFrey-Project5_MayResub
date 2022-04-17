@@ -43,6 +43,7 @@
             {% if request.user.is_superuser %}
             <small class="ml-3">
               <a href="{% url 'edit_team' member.id %}">Edit</a>
+              <a class="text-danger" href="{% url 'delete_team' member.id %}">Delete</a>
             </small>
             {% endif %}
           </td>
@@ -81,6 +82,7 @@
         {% if request.user.is_authenticated %}
         {% if request.user.is_superuser %}
         <a href="{% url 'add_location' %}" class="dropdown-item">Add Location</a>
+        
         {% endif %}
         {% endif %}
         <hr>
@@ -91,6 +93,7 @@
               {% if request.user.is_superuser %}
               <small class="ml-3">
                 <a href="{% url 'edit_location' location.id %}">Edit</a>
+                <a class="text-danger" href="{% url 'delete_location' location.id %}">Delete</a>
               </small>
               {% endif %}
             </td>
@@ -123,6 +126,7 @@
                 {% if request.user.is_superuser %}
                 <small class="ml-3">
                   <a href="{% url 'edit_contact' member.id %}">Edit</a>
+                  <a class="text-danger" href="{% url 'delete_contact' member.id %}">Delete</a>
                 </small>
                 {% endif %}
               </td>

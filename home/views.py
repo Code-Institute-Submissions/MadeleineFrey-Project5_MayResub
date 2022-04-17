@@ -185,3 +185,39 @@ def edit_contact(request, member_id):
     }
 
     return render(request, template, context)
+
+@login_required
+def delete_team(request, member_id):
+    """ Delete a box from the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+        
+    member = get_object_or_404(Team, pk=member_id)
+    member.delete()
+    messages.success(request, 'Team member deleted!')
+    return redirect(reverse('about_us'))
+
+@login_required
+def delete_location(request, location_id):
+    """ Delete a box from the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+        
+    location = get_object_or_404(Location, pk=location_id)
+    location.delete()
+    messages.success(request, 'Location deleted!')
+    return redirect(reverse('about_us'))
+
+@login_required
+def delete_contact(request, member_id):
+    """ Delete a box from the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+        
+    member = get_object_or_404(Contact, pk=member_id)
+    member.delete()
+    messages.success(request, 'Contact deleted!')
+    return redirect(reverse('about_us'))
