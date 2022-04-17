@@ -3,142 +3,152 @@
 
 {% block page_header %}
 <div class="container header-container">
-    <div class="row">
-        <div class="col"></div>
-    </div>
+  <div class="row">
+    <div class="col"></div>
+  </div>
 </div>
 {% endblock %}
 
 {% block content %}
 
 <div class="container my-my {% if grand_total %} info-box-more {% else %}  {% endif %}">
-    <div class="row">
-        <div class="col card mb-4  mt-3 left info-box">
-            <div class="card-body ">
-                <h1>Welcome</h1>
-            </div>
-        </div>
+  <div class="row">
+    <div class="col card mb-4  mt-3 left info-box">
+      <div class="card-body ">
+        <h1>Welcome</h1>
+      </div>
     </div>
+  </div>
 </div>
 <div class="row">
-    <div class="col">
+  <div class="col">
+    <hr>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-5 my-m-all">
+    <div class="card info-box">
+      <div class="card-body"></div>
+      <h4>Our Team</h4>
+      {% if request.user.is_authenticated %}
+      {% if request.user.is_superuser %}
+      <a href="{% url 'add_team' %}" class="dropdown-item">Add Team Member</a>
+      {% endif %}
+      {% endif %}
+      <hr>
+      <table style="width:100%">
+        {% for  member in xteam %}
+        <tr>
+          <td>
+            {% if request.user.is_superuser %}
+            <small class="ml-3">
+              <a href="{% url 'edit_team' member.id %}">Edit</a>
+            </small>
+            {% endif %}
+          </td>
+        </tr>
+        <tr>
+          <td class="about-title">Name:</td>
+          <td>{{member.name}}</td>
+
+        </tr>
+        <tr>
+          <td class="about-title">Role:</td>
+          <td>{{member.role}}</td>
+
+        </tr>
+        <tr>
+          <td class="about-title">Description:</td>
+          <td>
+            <p>
+              {{ member.description }}
+            </p>
+          </td>
+
+        </tr>
+
+        {% endfor %}
+      </table>
+      <hr>
+    </div>
+
+  </div>
+
+  <div class="col-lg-3 pr-2 my-m-all">
+    <div class="card info-box">
+      <div class="card-body">
+        <h4>Our Locations</h4>
+        {% if request.user.is_authenticated %}
+        {% if request.user.is_superuser %}
+        <a href="{% url 'add_location' %}" class="dropdown-item">Add Location</a>
+        {% endif %}
+        {% endif %}
         <hr>
+        <table style="width:100%">
+          {% for  location in xlocation %}
+          <tr>
+            <td>
+              {% if request.user.is_superuser %}
+              <small class="ml-3">
+                <a href="{% url 'edit_location' location.id %}">Edit</a>
+              </small>
+              {% endif %}
+            </td>
+          </tr>
+          <tr>
+            <td class="about-title">Adress:</td>
+            <td>{{ location.address}}</td>
+          </tr>
+          {% endfor %}
+        </table>
+        <hr>
+      </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-lg-5 my-m-all">
-        <div class="card info-box">
-            <div class="card-body"></div>
-              <h4>Our Team</h4>
-              {% if request.user.is_authenticated %}
-                          {% if request.user.is_superuser %}
-                              <a href="{% url 'add_team' %}" class="dropdown-item">Add Team Member</a>
-                          {% endif %}
-                          {% endif %}
-              <hr>
-              <table style="width:100%">
-                {% for  member in xteam %}
-                <tr>
-                  <td>
-                    {% if request.user.is_superuser %}
-                                                <small class="ml-3">
-                                                    <a href="{% url 'edit_team' member.id %}">Edit</a>
-                                                </small>
-                                            {% endif %}
-                  </td>
-                </tr>
-                <tr>
-                  <td class="about-title">Name:</td>
-                  <td>{{member.name}}</td>
-                  
-                </tr>
-                <tr>
-                  <td class="about-title">Role:</td>
-                  <td>{{member.role}}</td>
-                  
-                </tr>
-                <tr>
-                    <td class="about-title">Description:</td>
-                    <td> 
-                        <p>
-                           {{ member.description }}
-                        </p>
-                    </td>
-                    
-                  </tr>
-                  
-                  {% endfor %}
-              </table>
-              <hr>
+  </div>
+  <div class="col-lg-3 pr-2 my-m-all">
+    <div class="card info-box">
+      <div class="card-body">
+        <h4>Contact Information</h4>
+        {% if request.user.is_authenticated %}
+        {% if request.user.is_superuser %}
+        <a href="{% url 'add_contact' %}" class="dropdown-item">Add Contact Information</a>
+        {% endif %}
+        {% endif %}
+        <hr>
+        <div>
+          <table style="width:100%">
+            {% for  member in xcontact %}
+            <tr>
+              <td>
+                {% if request.user.is_superuser %}
+                <small class="ml-3">
+                  <a href="{% url 'edit_contact' member.id %}">Edit</a>
+                </small>
+                {% endif %}
+              </td>
+            </tr>
+          
+            <tr>
+              <td class="about-title">Name</td>
+              <td>{{ member.name }}
+              </td>
+            </tr>
+            <tr>
+              <td class="about-title">Email</td>
+              <td>{{ member.email }}</td>
+
+            </tr>
+            <tr>
+              <td class="about-title">Phone </td>
+              <td>{{ member.phone_number }}</td>
+            </tr>
+            {% endfor %}
+          </table>
+          <hr>
         </div>
-       
-          </div>
-  
-    <div class="col-lg-3 pr-2 my-m-all">
-        <div class="card info-box">
-            <div class="card-body">
-              <h4>Our Locations</h4>
-              {% if request.user.is_authenticated %}
-                          {% if request.user.is_superuser %}
-                              <a href="{% url 'add_location' %}" class="dropdown-item">Add Location</a>
-                          {% endif %}
-                          {% endif %}
-              <hr>
-              <table style="width:100%">
-                {% for  location in xlocation %}
-                <tr>
-                  <td>
-                    {% if request.user.is_superuser %}
-                                                <small class="ml-3">
-                                                    <a href="{% url 'edit_location' location.id %}">Edit</a>
-                                                </small>
-                                            {% endif %}
-                  </td>
-                </tr>
-                <tr>
-                  <td class="about-title">Adress:</td>
-                  <td>{{ location.address}}</td>
-                </tr>
-                {% endfor %}
-              </table>
-              <hr>
-            </div>
-          </div>
+      </div>
     </div>
-    <div class="col-lg-3 pr-2 my-m-all">
-        <div class="card info-box">
-            <div class="card-body">
-              <h4>Contact Information</h4>
-              {% if request.user.is_authenticated %}
-                          {% if request.user.is_superuser %}
-                              <a href="{% url 'add_contact' %}" class="dropdown-item">Add Contact Information</a>
-                          {% endif %}
-                          {% endif %}
-              <hr>
-              <div>
-                <table style="width:100%">
-                  {% for  member in xcontact %}
-                    <tr>
-                        <td class="about-title">Name</td>
-                        <td>{{ member.name }}
-                        </td>
-                      </tr>
-                    <tr>
-                      <td class="about-title">Email</td>
-                      <td>{{ member.email }}</td>
-                    
-                    </tr>
-                    <tr>
-                      <td class="about-title">Phone </td>
-                      <td>{{ member.phone_number }}</td>
-                    </tr>
-                    {% endfor %}
-                  </table>
-                  <hr>
-              </div>
-            </div>
-          </div>
-    </div>
- </div>
+  </div>
+</div>
 
 {% endblock %}

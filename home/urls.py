@@ -7,12 +7,9 @@ urlpatterns = [
     path('addt/', views.add_team, name='add_team'),
     path('addl/', views.add_location, name='add_location'),
     path('addc/', views.add_contact, name='add_contact'),
-    path('edit/<int:member_id>/', views.edit_team, name='edit_team'),
-    path('test/<int:location_id>/', views.edit_location, name='edit_location'),
-
-
-
-
-
+    path('editt/<int:member_id>/', views.edit_team, name='edit_team'),
+    path('editc/<int:member_id>/', views.edit_contact, name='edit_contact'),
+    path('editl/<int:location_id>/', views.edit_location, name='edit_location'),
+    
 
 ]
