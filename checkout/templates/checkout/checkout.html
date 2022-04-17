@@ -43,16 +43,6 @@
                 </div>
                 {% for box in bag_items %}
                     <div class="row">
-                        <div class="col-2 mb-1 ">
-                            <a href="{% url 'box_detail' box.box.id %}">
-                                {% if box.box.image %}
-                                    <img class="w-100" src="#" alt="{{ box.name }}">
-                                {% else %}
-                                    <img class="w-100" src="#" alt="{{ box.name }}">
-                                {% endif %}
-                            </a>
-                           
-                        </div>
                         <div class="col-7">
                             <p class="my-0 my-text-green"><strong>{{ box.box.name }}</strong></p>
                             <p class="my-0 text-dark">Qty: {{ box.quantity }}</p>

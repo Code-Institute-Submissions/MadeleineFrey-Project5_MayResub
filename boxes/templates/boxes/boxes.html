@@ -33,7 +33,10 @@
                             <div class="row">
                                 {% for box in boxes %}
                                 <div class="card box-div" style="width: 18rem;">
-                                    <img src="..." class="card-img-top" alt="..." style="height: 10rem;">
+                                   {% if box.image.url %}
+                                        <img src="{{ box.image.url}}" class="card-img-top" alt="{{ box.name }}" style=" height: 14rem;">
+                                
+                                    {% endif %}
                                     <div class="card-body">
                                        <h3> <a href="{% url 'box_detail' box.id %}"> {{ box.name }} </a> </h3>
                                        {% if request.user.is_superuser %}

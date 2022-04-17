@@ -46,12 +46,357 @@ MBoxes is a site where you can buy food boxes to make your everyday life so much
 * USER STORY: Manage information page
     - As a Admin I can Manage the information page so that I can show the user the right information.
 
+### Design
+---
+
+* Wireframes
+    * [HomePage]
+
+    * [BoxesPage]
+
+    * [DetailBoxPage]
+
+    * [AboutPage]
+
+    * [Login/Logout/Register]
+
+    * [Checkout]
+
+    * [Checkoutsuccess]
+
+    * [Profile]
+
+
+* Mockups
 
 
 
+### Choice of color
+---
+
+* Choice of color
+    - The color scheme for the MBoxes website is Vintage mustard and earthy greens. 
+- Hex codes:
+    - Mustard #E3B448, 
+    - Sage #CBD18F, 
+    - Forest Green #3A6B35
+
+<p>
+Yellow is beneficial because it’s attention-grabbing and conveys feelings of happiness. Yellow also represents food attributes. In this modern day, green is all about the earth. Nowdays the intrest of where food comes from is more than ever.
+</p>
+
+### Responsive Design
+---
+
+    - The site is responsive to all devices (desktop, mobile, tablet)
+    - The design of the web application meets accessibility guidelines, presents a structured layout and follows the principles of UX design and navigation model
+    - Contrast between background and foreground colors to help the visually impaired
+    - The graphics are consistent in style and color throughout the site.
+
+## Features
+---
+
+#### Home Page
+
+### Boxes Page
+
+### Detail Box Page
+
+### About Page
+
+### Login/Logout/Register
+
+### Checkout
+
+### Checkout success
+
+### Profile
+
+### Admin
+- Can edit on... 
+
+
+### Future features
+- Make subscription plans for users
+- Add django messages give the user good feedback when browsing the site
 
 
 
+## Technologies used
+---
+
+* Languages
+    * HTML.
+    * CSS.
+    * JavaScript.
+    * Python.
+
+* Frameworks libraries & programs Used
+    * Django
+    * Git
+    * Github
+    * Bootstrap
+    * Gunicorn
+    * dj_database_url
+    * psycopg2
+    * Cloudinary
+    * Summernote
+    * Django allauth
+    * Django crispy forms
 
 
+
+## Testing
+---
+
+### Validator Testing
+
+#### [Html]()
+
+Templates 
+* bag.html
+* add_box.html
+* boxes.html
+* detail_box.html
+* edit_box.html
+* checkout.html
+* checkout_success.html
+* about_us.html
+* add_contact.html
+* add_location.html
+* add_team.html
+* edit_contact.html
+* edit_location.html
+* edit_team.html
+* index.html
+* profile.html
+* base.html
+* register.html
+* login.html
+* logout.html
+
+
+#### [CSS]()
+
+* profile.css
+* base.css
+
+
+#### Javascript 
+
+* countryfield.js
+* 
+
+#### Python
+
+* Bag
+    * [ admin.py](documentation/img/)
+    * [forms.py](documentation/img/)
+    * [models.py](documentation/img/)
+    * [urls.py](documentation/img/)
+    * [views.py](documentation/img/)
+
+* Boxes
+    * [ admin.py](documentation/img/)
+    * [forms.py](documentation/img/)
+    * [models.py](documentation/img/)
+    * [urls.py](documentation/img/)
+    * [views.py](documentation/img/)
+
+* checkout
+    * [ admin.py](documentation/img/)
+    * [forms.py](documentation/img/)
+    * [models.py](documentation/img/)
+    * [urls.py](documentation/img/)
+    * [views.py](documentation/img/)
+
+* Home
+    * [ admin.py](documentation/img/)
+    * [forms.py](documentation/img/)
+    * [models.py](documentation/img/)
+    * [urls.py](documentation/img/)
+    * [views.py](documentation/img/)
+
+* Profiles
+    * [ admin.py](documentation/img/)
+    * [forms.py](documentation/img/)
+    * [models.py](documentation/img/)
+    * [urls.py](documentation/img/)
+    * [views.py](documentation/img/)
+
+* Subscription_box
+    * [ admin.py](documentation/img/)
+    * [forms.py](documentation/img/)
+    * [models.py](documentation/img/)
+    * [urls.py](documentation/img/)
+    * [views.py](documentation/img/)
+
+
+### Manual testing
+
+![manual1](documentation/img/)
+![manual2](documentation/img/)
+
+
+## Deployment
+---
+
+
+* Deployment steps followed:
+    1. Create the Heroku app .
+    1. Attach the PostgreSQL
+    1. Prepare environment and settings.py files
+    1. Get our static and media files stored on Cloudinary
+
+<br>
+
+* Heroku
+    1. “pip3 install django gunicorn” in the terminal, using gunicorn to be the server to run Django on heroku.
+    1. “pip3 install dj_database_url psycopg2
+
+<br>
+
+* To run Cloudinary 
+    1. pip3 install dj3-cloudinary-storage
+    1. Create the requirements.txt file: pip3 freeze –local >requirements.txt
+
+<br>
+
+* To create a new Django project
+    1. “django-admin start project traint .”
+    1. Create the app: “python3 manage.py startapp forum”
+
+<br>
+
+* In our settings.py file
+    1. in the installed app section add: “forum” 
+
+<p>
+we now need to migrate this changes to the database
+in the terminal: “python3 manage.py migrate”
+</p>
+
+<br>
+
+#### Creat a app in heroku
+
+1. You need to have an account on Heroku.com
+2. Create a list of requirements that the project needs to run:
+    * ype in this in the terminal: pip3 freeze > requirements.txt
+    * (Now all of the requirements has been updated)
+    * Commit and push the changes to GitHub
+3. login to your account on Heroku or create one if needed.
+4. Click on your profile and then the "create new app" button.
+5. You will now create an app name and select a region.
+    * This project chose traint-forum and the region Europe
+    * The app name needs to be unique
+6. when this is done click "create app"
+7. In the Resources tab, Add a database: search for postgres in the Add-ons field (Heroku Postgres)
+8. Open the settings tab before you deploy the code.
+9. In setting, scroll down to the config Vars section
+10. copy the DATABASE_URL
+
+<br>
+
+* In the code in the same directory as the manage.py create a file named “env.py”
+    1. At the top import os
+    1. Set a environment variable caller DATABASE_URL  (paste in url)
+    1. Add your SECRET_KEY as well 
+    1. copy your secret key value and go back to Heroku config vars.
+    1. Add the secret_key value to a new config var called SECRET_KEY
+    1. Reference the env.py in the setings.py file, by using:
+        * import os 
+        * import dj_database
+    1. In setings.py add secret key value:
+        * SECRET_KEY = os.environ.get('SECRET_KEY')
+    1. In settings scroll down to DATABASES: 
+        * DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+
+Do not forget to migrate the changes
+
+### Cloudinary
+
+1. Create an account
+1. Click on the Sign Up For Free button
+1. Provide your name, email address and choose a password
+1. For Primary interest, you can choose Programmable Media for image and video API
+1. Optional: edit your assigned cloud name to something more memorable
+1. Click Create Account
+1. Verify your email and you will be brought to the dashboard
+
+<br>
+
+1. From the dashboard, copy the "API Environment variable" value by clicking on the "Copy to clipboard" link.
+1. Go back to the env.py file add the value to CLOUDINARY_URL(remember to remove CLOUDINARY_URL= in the begining of the "API Environment variable")
+1. Paste the same value into heroku as well in a config var named “CLOUDINARY_URL”
+1. When starting your project add one temporary variable: 
+    * DISABLE_COLLECTSTATIC assign it 1
+
+<br>
+
+* In settings.py under installed apps add:
+    * ‘cloudinary_storage’
+    * ‘cloudinary’
+
+<br>
+
+* At the end of settings.py add: 
+    * STATICFILES_STORAGE = Cloudinary_storage.storage.StaticHashedCloudinaryStorage"
+    * STATICFILES_DRS = [os.path.join(BASE_DIR, ‘static’)]
+    * STATIC_ROOT = os.path.join(BASE_DIR, ‘static’)
+    * MEDIA_URL = ‘/media/’
+    * DEFAULT_FILE_STORAGE = ‘"Cloudinary_storage.storage.MediaCloudinaryStorage".
+
+<br>
+
+Tell django where our templates are stored by: 
+* TEMPLATES_DIR = os.path.join(BASE_DIR, ‘templates’)
+* Set the ‘DIRS’: [TEMPLATES_DIR]
+* set  ALLOWED_HOSTS = [‘herokuappname.herokuapp.com’, ‘localhost’]
+* Create a Procfile 
+* Commit and push the changes to the repository
+
+<br>
+
+In Heroku 
+1. Under deploy choose Github as deployment method
+1. Search for the repository
+1. then click on deploy branch
+
+### Final Deployment
+
+* start with setting debug to False i settings.py
+    * add, X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+* Then commit your changes and push to github
+
+## Credits
+---
+
+### Code
+
+* #### Mentor sessions
+
+<p>
+The mentor sessions throughout the project have been a massive help. During the sessions, I have been able to move forward with the project and develop it even further.
+</p>
+
+* #### Course content
+
+<p>
+The course content has helped me get an all-around understanding of the concept used in this project. I have been able to apply the previous videos and exercises to create my site.
+</p>
+
+* #### Code institute slack chanel
+
+<p>
+The Codeinstitute slack channel has been a massive help with small problems. Discussing with other students has been very helpful in driving the project forward.
+</p>
+
+* #### website/links
+
+    * [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Introduction)
+    * [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Models)
+    * [Bootstrap](https://getbootstrap.com/docs/4.6/getting-started/introduction/)
+    * [Django](https://docs.djangoproject.com/en/4.0/)
 
