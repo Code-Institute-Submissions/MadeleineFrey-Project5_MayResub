@@ -8,8 +8,6 @@ from django_countries.fields import CountryField
 from boxes.models import Box
 from profiles.models import UserProfile
 
-# Create your models here.
-
 class Order(models.Model):
     """ X """
 
@@ -78,3 +76,4 @@ class OrderLineItem(models.Model):
 
     def __str__(self):
         return f'SKU {self.box.sku} on order {self.order.order_number}'
+        

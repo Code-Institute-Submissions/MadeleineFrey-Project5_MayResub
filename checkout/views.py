@@ -68,7 +68,7 @@ def checkout(request):
                     order_line_item.save()
                 except Box.DoesNotExist:
                     messages.error(request, (
-                        'One of the items in your cart wasn\'t found \
+                        'One of the items in your bag wasn\'t found \
                         in our database. Please contact us for assistance.')
                     )
                     order.delete()
@@ -95,9 +95,6 @@ def checkout(request):
         )
 
         order_form = OrderForm()
-
-    # if not stripe_public_key:
-    # messages.warning(request, 'Stripe public key is missing.')
 
     template = 'checkout/checkout.html'
     context = {

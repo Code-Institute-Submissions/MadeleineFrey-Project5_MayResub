@@ -31,7 +31,7 @@
     <div class="row my-bag-bg ">
         <div class="col">
             <div class="col card mb-4  mt-3 left info-box">
-                
+
                 {% if bag_items %}
 
                 {% for box in bag_items %}
@@ -46,32 +46,40 @@
                                                 <li class="bag-item clearfix">
                                                     <div class="bag-item-image"><img src="#" alt="">
                                                     </div>
-                                                    <div class="bag-item-info d-flex flex-md-row flex-column justify-content-between">
+                                                    <div
+                                                        class="bag-item-info d-flex flex-md-row flex-column justify-content-between">
                                                         <div class="bag-item-name bag-info-col">
                                                             <div class="bag-item-title">Name</div>
                                                             <div class="cart_item_text"> {{ box.box.name }} </div>
                                                         </div>
                                                         <div class=" cart_info_col">
                                                             <div class="cart_item_title">Quantity</div>
-                                                            <form class="form update-form" method="POST" action="{% url 'adjust_bag' box.box_id %}">
+                                                            <form class="form update-form" method="POST"
+                                                                action="{% url 'adjust_bag' box.box_id %}">
                                                                 {% csrf_token %}
                                                                 <div class="form-group">
                                                                     <div class="input-group">
                                                                         <div class="input-group-prepend">
-                                                                            <button class="decrement-qty btn btn-sm btn-black rounded-0" 
-                                                                                data-box_id="{{ box.box_id }}" id="decrement-qty_{{ box.box_id }}">
+                                                                            <button
+                                                                                class="decrement-qty btn btn-sm btn-black rounded-0"
+                                                                                data-box_id="{{ box.box_id }}"
+                                                                                id="decrement-qty_{{ box.box_id }}">
                                                                                 <span>
                                                                                     <i class="fas fa-minus fa-sm">X-</i>
                                                                                 </span>
                                                                             </button>
                                                                         </div>
-                                                                        <input class="form-control form-control-sm qty_input" type="number"
-                                                                            name="quantity" value="{{ box.quantity }}" min="1" max="99"
+                                                                        <input
+                                                                            class="form-control form-control-sm qty_input"
+                                                                            type="number" name="quantity"
+                                                                            value="{{ box.quantity }}" min="1" max="99"
                                                                             data-box_id="{{ box.box_id }}"
                                                                             id="id_qty_{{ box.box_id }}">
                                                                         <div class="input-group-append">
-                                                                            <button class="increment-qty btn btn-sm btn-black rounded-0"
-                                                                                data-box_id="{{ box.box_id }}" id="increment-qty_{{ box.box_id }}">
+                                                                            <button
+                                                                                class="increment-qty btn btn-sm btn-black rounded-0"
+                                                                                data-box_id="{{ box.box_id }}"
+                                                                                id="increment-qty_{{ box.box_id }}">
                                                                                 <span>
                                                                                     <i class="fas fa-plus fa-sm"> X+</i>
                                                                                 </span>
@@ -80,17 +88,18 @@
                                                                     </div>
                                                                 </div>
                                                             </form>
-                                                            
-                                                            <a class="update-link text-info bag-item-quantity "><small class="my-text-color">Update</small></a>
-                                                            <a class="remove-box text-danger float-right bag-item-quantity" id="remove_{{ box.box_id }}"><small>Remove</small></a>
-                                                            
 
+                                                            <a class="update-link text-info bag-item-quantity "><small
+                                                                    class="my-text-color">Update</small></a>
+                                                            <a class="remove-box text-danger float-right bag-item-quantity"
+                                                                id="remove_{{ box.box_id }}"><small>Remove</small></a>
                                                         </div>
                                                         <div class="cart_box_price cart_info_col">
                                                             <div class="cart_box_title">Price</div>
-                                                            <div class="cart_box_text"> {{ box.box.price | calc_subtotal:box.quantity }}</div>
+                                                            <div class="cart_box_text">
+                                                                {{ box.box.price | calc_subtotal:box.quantity }}</div>
                                                         </div>
-                                                        
+
                                                     </div>
                                                 </li>
                                             </ul>
@@ -123,65 +132,68 @@
                             <div class="order_total_content text-md-right">
                                 <div class="order_delivery_title">
                                     <p class="mb-1 text-danger">
-                                    You could get free delivery by spending just <strong>${{ free_delivery_delta }}</strong> more!
-                                </p>
-                            </div>
+                                        You could get free delivery by spending just
+                                        <strong>${{ free_delivery_delta }}</strong> more!
+                                    </p>
+                                </div>
                             </div>
                             {% endif %}
-                    </div>
-                    <div>
-                        <a href="{% url 'boxes' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                        </div>
+                        <div>
+                            <a href="{% url 'boxes' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                                <span class="icon">
+                                    <i class="fas fa-chevron-left"></i>
+                                </span>
+                                <span class="text-uppercase">Keep Shopping</span>
+                            </a>
+                            <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
+                                <span class="text-uppercase">Secure Checkout</span>
+                                <span class="icon">
+                                    <i class="fas fa-lock"></i>
+                                </span>
+                            </a>
+                        </div>
+                        {% else %}
+                        <p class="lead mb-5">Your bag is empty.</p>
+                        <!-- add style to button -->
+                        <a href="{% url 'boxes' %}" class="btn btn-outline-black btn-lg">
                             <span class="icon">
-                                <i class="fas fa-chevron-left"></i>
+                                <!-- icon -->
                             </span>
-                            <span class="text-uppercase">Keep Shopping</span>
+                            <span class="text-uppercase my-text-color">Keep Shopping</span>
                         </a>
-                        <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
-                            <span class="text-uppercase">Secure Checkout</span>
-                            <span class="icon">
-                                <i class="fas fa-lock"></i>
-                            </span>
-                        </a>
+                        {% endif %}
                     </div>
-                    {% else %}
-                    <p class="lead mb-5">Your bag is empty.</p>
-                    <!-- add style to button -->
-                    <a href="{% url 'boxes' %}" class="btn btn-outline-black btn-lg">
-                        <span class="icon">
-                            <!-- icon -->
-                        </span>
-                        <span class="text-uppercase my-text-color">Keep Shopping</span>
-                    </a>
-                    {% endif %}
                 </div>
             </div>
         </div>
     </div>
-</div>
     {% endblock %}
 
-{% block postloadjs %}
-{{ block.super }}
-{% include 'boxes/includes/quantity_input_script.html' %}
+    {% block postloadjs %}
+    {{ block.super }}
+    {% include 'boxes/includes/quantity_input_script.html' %}
 
-<script type="text/javascript">
-    // Update quantity on click
-    $('.update-link').click(function(e) {
-        var form = $(this).prev('.update-form');
-        form.submit();
-    })
+    <script type="text/javascript">
+        // Update quantity on click
+        $('.update-link').click(function (e) {
+            var form = $(this).prev('.update-form');
+            form.submit();
+        })
 
-    // remove from cart
-    $('.remove-box').click(function(e) {
+        // remove from cart
+        $('.remove-box').click(function (e) {
             var csrfToken = "{{ csrf_token }}";
             var boxId = $(this).attr('id').split('remove_')[1];
             var url = `/bag/remove/${boxId}/`;
-            var data = {'csrfmiddlewaretoken': csrfToken};
+            var data = {
+                'csrfmiddlewaretoken': csrfToken
+            };
 
             $.post(url, data)
-             .done(function() {
-                location.reload();
-             });
+                .done(function () {
+                    location.reload();
+                });
         })
-</script>
-{% endblock %}
+    </script>
+    {% endblock %}

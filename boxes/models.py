@@ -1,7 +1,5 @@
 from django.db import models
 
-# Create your models here.
-
 class Category(models.Model):
     """ Model to store different Categories"""
 
@@ -16,8 +14,6 @@ class Category(models.Model):
 
     def get_friendly_name(self):
         return self.friendly_name
-
-
 
 class Box(models.Model):
     """ X """

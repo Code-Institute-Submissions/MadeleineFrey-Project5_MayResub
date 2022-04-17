@@ -3,7 +3,6 @@ from django.shortcuts import (
 
 from boxes.models import Box
 
-# Create your views here.
 def view_bag(request):
     """
     View renders the bag contents page

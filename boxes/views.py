@@ -41,7 +41,7 @@ def detail_box(request, box_id):
 
 @login_required 
 def add_box(request):
-    """ Add a product to the store """
+    """ Add a box to the store """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -50,10 +50,10 @@ def add_box(request):
         form = BoxForm(request.POST, request.FILES)
         if form.is_valid():
             box = form.save()
-            messages.success(request, 'Successfully added product!')
+            messages.success(request, 'Successfully added box!')
             return redirect(reverse('box_detail', args=[box.id]))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(request, 'Failed to add box. Please ensure the form is valid.')
     else:
         form = BoxForm()
         

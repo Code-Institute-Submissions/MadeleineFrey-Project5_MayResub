@@ -1,7 +1,6 @@
 from django.contrib import admin
 from .models import Box, Category
 
-# Register your models here.
 
 class BoxAdmin(admin.ModelAdmin):
     list_display = (
@@ -11,10 +10,6 @@ class BoxAdmin(admin.ModelAdmin):
         'price',
         'image',
     )
-
-    # uncomment later,  ordering = ('sku',)  
-  
-
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
