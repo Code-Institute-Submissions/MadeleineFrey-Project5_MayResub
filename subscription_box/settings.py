@@ -14,7 +14,7 @@ import os
 from pathlib import Path
 
 import dj_database_url
-if os.path.isfile("env.py"):
+if os.path.isfile('env.py'):
     import env
 
 
@@ -173,8 +173,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'  # noqa: E501
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
