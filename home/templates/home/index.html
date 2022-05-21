@@ -10,23 +10,23 @@
 {% endblock %}
 
 {% block content %}
+<section>
     <div class="container h-100 my-mt">
-
-                <div class="row">
-                    <div class="col-8">
-                        <h1 class="display-4 logo-font">
-                            Mboxes!
-                        </h1>
-                    </div>
-                    <div class="my-5">
-                        <h4>
-                            <a href="#" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3"> Free delivery on orders over ${{ free_delivery_threshold }}! </a>
-                            <p id="my-shipping"> *else 15$ </p>
-                        </h4>
-                    </div>
-                    <!-- <div class="col-4 img-fp"></div> !-->
-                  </div>
+        <div class="row">
+            <div class="col-8">
+                <h2 class="display-4 logo-font">
+                    Mboxes!
+                </h2>
             </div>
-       
-
+            <div class="my-5">
+                <h3>
+                    <a href="#" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3"> Free delivery on
+                        orders over ${{ free_delivery_threshold }}! </a>
+                    <h3 id="my-shipping"> *else 15$ </h3>
+                </h3>
+            </div>
+            <!-- <div class="col-4 img-fp"></div> !-->
+        </div>
+    </div>
+</section>
 {% endblock %}

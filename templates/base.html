@@ -47,7 +47,7 @@
     <header class="container-fluid fixed-top" id="my-base-header">
       <div>
       <nav class="navbar navbar-expand-lg my-navbar">
-        <a class="navbar-brand" href="{% url 'home' %}">Logo</a>
+        <a class="navbar-brand" href="{% url 'home' %}"> <h1> Logo </h1> </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon my-navbar-button">X</span>
         </button>
@@ -57,7 +57,7 @@
               <a class="nav-link" href="{% url 'home' %}">Home </a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="{% url 'boxes' %}" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
                 Boxes
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -94,7 +94,6 @@
                           <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
                       {% endif %}
                   </div>
-              </li>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'bag' %}">Bag</a>

@@ -15,7 +15,7 @@
   <div class="row">
     <div class="col card mb-4  mt-3 left info-box">
       <div class="card-body ">
-        <h1>Welcome</h1>
+        <h2>Welcome</h2>
       </div>
     </div>
   </div>
@@ -29,7 +29,7 @@
   <div class="col-lg-5 my-m-all">
     <div class="card info-box">
       <div class="card-body"></div>
-      <h4>Our Team</h4>
+      <h3>Our Team</h3>
       {% if request.user.is_authenticated %}
       {% if request.user.is_superuser %}
       <a href="{% url 'add_team' %}" class="dropdown-item">Add Team Member</a>
@@ -78,7 +78,7 @@
   <div class="col-lg-3 pr-2 my-m-all">
     <div class="card info-box">
       <div class="card-body">
-        <h4>Our Locations</h4>
+        <h3>Our Locations</h3>
         {% if request.user.is_authenticated %}
         {% if request.user.is_superuser %}
         <a href="{% url 'add_location' %}" class="dropdown-item">Add Location</a>
@@ -111,7 +111,7 @@
   <div class="col-lg-3 pr-2 my-m-all">
     <div class="card info-box">
       <div class="card-body">
-        <h4>Contact Information</h4>
+        <h3>Contact Information</h3>
         {% if request.user.is_authenticated %}
         {% if request.user.is_superuser %}
         <a href="{% url 'add_contact' %}" class="dropdown-item">Add Contact Information</a>
