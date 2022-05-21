@@ -66,6 +66,8 @@ MBoxes is a site where you can buy food boxes to make your everyday life so much
 
     * [Profile]
 
+    * [Admin?]
+
 
 * Mockups
 
@@ -98,27 +100,119 @@ Yellow is beneficial because it’s attention-grabbing and conveys feelings of h
 
 #### Home Page
 
+- Navigation bar
+    - The navbar allows the user to navigate throughout the site and can access all allowed pages. 
+
+- Introduction to page
+
+- Option to subscribe to the newsletter
+
+
 ### Boxes Page
+
+(categories: All boxes, breakfast, lunch, diner, special)
+
+- Depending on what category the user choose the renders all boxes and gives the user a preview of the content of the box. By pressing the title the user will be directed to the full information of the box where they can add it to the cart if it suits their interest.
+ 
+- If the user is an Admin they can have the option to Add, Edit and delete the boxes on the page.
 
 ### Detail Box Page
 
+- The full detail box page, shows the user  
+    - Title
+    - Image
+    - Full description
+    - Price
+    - Sice
+    - Pick quantity
+    - Option for Add to bag
+
+
 ### About Page
+
+- On the about page the user can get information on the site to strengthen their will to purchase from the site.
+
+- Our Team
+    - Name
+    - Role
+    - Description
+
+- Our Locations
+    - Address
+
+- Contact Information
+    - Name
+    - Email
+    - Phone
+
+If the User is an Admin they can have the option to Add, Edit and delete the informaition on the page.
+
+
+
 
 ### Login/Logout/Register
 
+- In the navigationbar the user can login/logout if they have an account
+    - Register if they do not have an account
+
+
+### Shopping cart
+
+- Product 
+    - Name
+    - Quantity
+    - Price
+
+- Information
+    - Total
+    - Shipping if they did not spend 65
+    - Total
+    - Grand/Order total
+    - Delta to dree shipping if the user did not spend 65
+
+- The user can also edit their shoppingbag
+    - Delete Items
+    - Change quantity
+
+
 ### Checkout
+
+- Form
+    - Full Name
+    - Email Address
+    - Phone Number
+    - Country
+    - Postcode (Optional)
+    - Town or city
+    - Street Address 1
+    - Street Address 2 (Optional)
+    - County (Optional)
+    - Card Information
+
+- Option to save the information to profile
+- Proceed to checkout 
+
 
 ### Checkout success
 
-### Profile
+- If the payment went through the user will be redirected to the checkout success page
 
-### Admin
-- Can edit on... 
+### Profile User
+
+- Default Delivery Information
+    - Phone Number
+    - Country
+    - Town or city
+    - Street Address 1
+    - Street Address 2 
+    - County 
+- If the user want to update their information they can fill in the form and press “Update Information”
 
 
 ### Future features
+
 - Make subscription plans for users
-- Add django messages give the user good feedback when browsing the site
+- Additional Style to buttons  
 
 
 
@@ -190,52 +284,54 @@ Templates
 #### Python
 
 * Bag
-    * [ admin.py](documentation/img/)
-    * [forms.py](documentation/img/)
-    * [models.py](documentation/img/)
-    * [urls.py](documentation/img/)
-    * [views.py](documentation/img/)
+    * [urls.py](documentation/img/Bag-url.jpg)
+    * [views.py](documentation/img/Bag-views.jpg)
 
 * Boxes
-    * [ admin.py](documentation/img/)
-    * [forms.py](documentation/img/)
-    * [models.py](documentation/img/)
-    * [urls.py](documentation/img/)
-    * [views.py](documentation/img/)
+    * [admin.py](documentation/img/Boxes-admin.jpg)
+    * [apps.py](documentation/img/Boxes-app.jpg)
+    * [forms.py](documentation/img/Boxes-forms.jpg)
+    * [models.py](documentation/img/Boxes-models.jpg)
+    * [urls.py](documentation/img/Boxes-urls.jpg)
+    * [views.py](documentation/img/Boxes-views.jpg)
 
 * checkout
-    * [ admin.py](documentation/img/)
-    * [forms.py](documentation/img/)
-    * [models.py](documentation/img/)
-    * [urls.py](documentation/img/)
-    * [views.py](documentation/img/)
+    * [admin.py](documentation/img/Checkout-admin.jpg)
+    * [apps.py](documentation/img/Checkout-apps.jpg)
+    * [forms.py](documentation/img/Checkout-forms.jpg)
+    * [models.py](documentation/img/Checkout-models.jpg)
+    * [signals.py](documentation/img/Checkout-signals.jpg)
+    * [urls.py](documentation/img/Checkout-urls.jpg)
+    * [views.py](documentation/img/Checkout-views.jpg)
+    * [webhooks.py](documentation/img/Webhooks.jpg)
+    * [webhook_handler.py](documentation/img/Webhook-handler.jpg)
 
 * Home
-    * [ admin.py](documentation/img/)
-    * [forms.py](documentation/img/)
-    * [models.py](documentation/img/)
-    * [urls.py](documentation/img/)
-    * [views.py](documentation/img/)
+    * [admin.py](documentation/img/Home-admin.jpg)
+    * [apps.py](documentation/img/Home-apps.jpg)
+    * [forms.py](documentation/img/Home-forms.jpg)
+    * [models.py](documentation/img/Home-models.jpg)
+    * [urls.py](documentation/img/Home-urls.jpg)
+    * [views.py](documentation/img/Home-views.jpg)
 
 * Profiles
-    * [ admin.py](documentation/img/)
-    * [forms.py](documentation/img/)
-    * [models.py](documentation/img/)
-    * [urls.py](documentation/img/)
-    * [views.py](documentation/img/)
+    * [apps.py](documentation/img/Profiles-apps.jpg)
+    * [forms.py](documentation/img/Profiles-forms.jpg)
+    * [models.py](documentation/img/Profiles-models.jpg)
+    * [urls.py](documentation/img/Profiles-urls.jpg)
+    * [views.py](documentation/img/Profiles-views.jpg)
 
 * Subscription_box
-    * [ admin.py](documentation/img/)
-    * [forms.py](documentation/img/)
-    * [models.py](documentation/img/)
-    * [urls.py](documentation/img/)
-    * [views.py](documentation/img/)
+    * [urls.py](documentation/img/Subscription-box-urls.jpg)
+    * [settings.py](documentation/img/Subscription-box-settings.jpg)
 
 
 ### Manual testing
 
-![manual1](documentation/img/)
-![manual2](documentation/img/)
+![manual1](documentation/img/Manual-testing1.jpg)
+![manual2](documentation/img/Manual-testing2.jpg)
+![manual3](documentation/img/Manual-testing3.jpg)
+![manual4](documentation/img/Manual-testing4.jpg)
 
 
 ## Deployment

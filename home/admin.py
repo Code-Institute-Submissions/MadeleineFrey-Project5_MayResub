@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Team, Location, Contact
 
+
 # Register your models here.
 class TeamAdmin(admin.ModelAdmin):
     list_display = (
@@ -9,10 +10,12 @@ class TeamAdmin(admin.ModelAdmin):
         'role',
     )
 
+
 class LocationAdmin(admin.ModelAdmin):
     list_display = (
         'address',
     )
+
 
 class ContactAdmin(admin.ModelAdmin):
     list_display = (
@@ -24,4 +27,3 @@ class ContactAdmin(admin.ModelAdmin):
 admin.site.register(Team, TeamAdmin)
 admin.site.register(Location, LocationAdmin)
 admin.site.register(Contact, ContactAdmin)
-

@@ -20,7 +20,6 @@ def all_boxes(request):
         boxes = boxes.filter(category__name__in=categories)
         categories = Category.objects.filter(name__in=categories)
 
-    
     context = {
         'boxes': boxes,
     }
@@ -39,7 +38,8 @@ def detail_box(request, box_id):
 
     return render(request, 'boxes/detail_box.html', context)
 
-@login_required 
+
+@login_required
 def add_box(request):
     """ Add a box to the store """
     if not request.user.is_superuser:
@@ -53,16 +53,17 @@ def add_box(request):
             messages.success(request, 'Successfully added box!')
             return redirect(reverse('box_detail', args=[box.id]))
         else:
-            messages.error(request, 'Failed to add box. Please ensure the form is valid.')
+            messages.error(request, 'Failed to add box. Please ensure the form is valid.')  # noqa: E501
     else:
         form = BoxForm()
-        
+
     template = 'boxes/add_box.html'
     context = {
         'form': form,
     }
 
     return render(request, template, context)
+
 
 @login_required
 def edit_box(request, box_id):
@@ -79,7 +80,7 @@ def edit_box(request, box_id):
             messages.success(request, 'Successfully updated box!')
             return redirect(reverse('box_detail', args=[box.id]))
         else:
-            messages.error(request, 'Failed to update box. Please ensure the form is valid.')
+            messages.error(request, 'Failed to update box. Please ensure the form is valid.')  # noqa: E501
     else:
         form = BoxForm(instance=box)
         messages.info(request, f'You are editing {box.name}')
@@ -92,13 +93,14 @@ def edit_box(request, box_id):
 
     return render(request, template, context)
 
+
 @login_required
 def delete_box(request, box_id):
     """ Delete a box from the store """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
-        
+
     box = get_object_or_404(Box, pk=box_id)
     box.delete()
     messages.success(request, 'Box deleted!')

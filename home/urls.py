@@ -9,10 +9,8 @@ urlpatterns = [
     path('addc/', views.add_contact, name='add_contact'),
     path('editt/<int:member_id>/', views.edit_team, name='edit_team'),
     path('editc/<int:member_id>/', views.edit_contact, name='edit_contact'),
-    path('editl/<int:location_id>/', views.edit_location, name='edit_location'),
+    path('editl/<int:location_id>/', views.edit_location, name='edit_location'),  # noqa: E501
     path('deletet/<int:member_id>/', views.delete_team, name='delete_team'),
-    path('deletel/<int:location_id>/', views.delete_location, name='delete_location'),
-    path('deletec/<int:member_id>/', views.delete_contact, name='delete_contact'),
-
-
+    path('deletel/<int:location_id>/', views.delete_location, name='delete_location'),  # noqa: E501
+    path('deletec/<int:member_id>/', views.delete_contact, name='delete_contact'),  # noqa: E501
 ]

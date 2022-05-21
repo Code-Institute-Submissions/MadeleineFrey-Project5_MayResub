@@ -43,10 +43,8 @@
                                         <div class="bag-items">
                                             <ul class="bag-list">
                                                 <li class="bag-item clearfix">
-                                                    <div class="bag-item-image"><img src="#" alt="">
-                                                    </div>
                                                     <div
-                                                        class="bag-item-info d-flex flex-md-row flex-column justify-content-between">
+                                                        class="bag-item-info mt-1 d-flex flex-md-row flex-column justify-content-between">
                                                         <div class="bag-item-name bag-info-col">
                                                             <div class="bag-item-title">Name</div>
                                                             <div class="cart_item_text"> {{ box.box.name }} </div>
@@ -88,10 +86,10 @@
                                                                 </div>
                                                             </form>
 
-                                                            <a class="update-link text-info bag-item-quantity "><small
+                                                            <a class="update-link text-info bag-item-quantity my-button-hover" role="button"><small
                                                                     class="my-text-color">Update</small></a>
                                                             <a class="remove-box text-danger float-right bag-item-quantity"
-                                                                id="remove_{{ box.box_id }}"><small>Remove</small></a>
+                                                                id="remove_{{ box.box_id }}" role="button"><small>Remove</small></a>
                                                         </div>
                                                         <div class="cart_box_price cart_info_col">
                                                             <div class="cart_box_title">Price</div>
@@ -138,11 +136,11 @@
                             {% endif %}
                         </div>
                         <div>
-                            <a href="{% url 'boxes' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                            <a href="{% url 'boxes' %}" class="btn btn-lg">
                                 <span class="icon">
                                     <i class="fas fa-chevron-left"></i>
                                 </span>
-                                <span class="text-uppercase">Keep Shopping</span>
+                                <span type="button" class="text-uppercase">Keep Shopping</span>
                             </a>
                             <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
                                 <span class="text-uppercase">Secure Checkout</span>
@@ -156,7 +154,7 @@
                         <!-- add style to button -->
                         <a href="{% url 'boxes' %}" class="btn btn-outline-black btn-lg">
                             <span class="icon">
-                                <!-- icon -->
+                                
                             </span>
                             <span class="text-uppercase my-text-color">Keep Shopping</span>
                         </a>

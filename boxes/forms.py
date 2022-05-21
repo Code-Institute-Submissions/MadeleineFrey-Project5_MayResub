@@ -1,6 +1,7 @@
 from django import forms
 from .models import Box, Category
 
+
 class BoxForm(forms.ModelForm):
 
     class Meta:

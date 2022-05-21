@@ -5,11 +5,13 @@ from django.contrib import messages
 
 from boxes.models import Box
 
+
 def view_bag(request):
     """
     View renders the bag contents page
     """
     return render(request, "bag/bag.html")
+
 
 def add_to_bag(request, box_id):
     """ Add a quantity of the specified box to the shopping bag """
@@ -40,13 +42,14 @@ def adjust_bag(request, box_id):
 
     if quantity > 0:
         bag[box_id] = quantity
-        messages.success(request, f'Updated {box.name} quantity to {bag[box_id]}')
+        messages.success(request, f'Updated {box.name} quantity to {bag[box_id]}')  # noqa: E501
     else:
         bag.pop(box_id)
         messages.success(request, f'Removed {box.name} from your bag')
 
     request.session['bag'] = bag
     return redirect(reverse('bag'))
+
 
 def remove_from_bag(request, box_id):
     """ Removes the specified product from the cart """

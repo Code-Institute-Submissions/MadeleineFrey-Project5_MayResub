@@ -21,8 +21,9 @@ body {
     padding: 0; !important
     
 }
+/* #my-base-header a */
 
-#my-base-header a {
+#my-base-header {
     color: #E3B448;
 }
 
@@ -43,6 +44,8 @@ body {
     background-color: #3a6b35;
     margin: 11px;
 }
+
+
 
 .info-box {
     background-color: #3a6b35;
@@ -207,4 +210,7 @@ a:hover {
 .arrow-dark {
     border-bottom-color: #343a40 !important;
 }
+
+
+/* Button style */
 
