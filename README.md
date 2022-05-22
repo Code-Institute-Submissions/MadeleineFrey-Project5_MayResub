@@ -253,26 +253,27 @@ If the User is an Admin they can have the option to Add, Edit and delete the inf
 #### [Html]()
 
 Templates 
-* bag.html
-* add_box.html
-* boxes.html
-* detail_box.html
-* edit_box.html
-* checkout.html
-* checkout_success.html
-* about_us.html
-* add_contact.html
-* add_location.html
-* add_team.html
-* edit_contact.html
-* edit_location.html
-* edit_team.html
-* index.html
-* profile.html
-* base.html
-* register.html
-* login.html
-* logout.html
+* [bag.html](documentation/img/wfbag.jpg)
+* [add_box.html](documentation/img/wfadd.jpg)
+* [boxes.html](documentation/img/wfboxes.jpg)
+* [detail_box.html](documentation/img/wfdb.jpg)
+* [edit_box.html](documentation/img/wfeditb.jpg)
+* [checkout.html](documentation/img/wfc.jpg)
+* [checkout_success.html](documentation/img/wfcs.jpg)
+* [about_us.html](documentation/img/wfabout.jpg)
+* [add_contact.html](documentation/img/wfaddc.jpg)
+* [add_location.html](documentation/img/wfaddl.jpg)
+* [add_team.html](documentation/img/wfaddt.jpg)
+* [edit_contact.html](documentation/img/wfeditc.jpg)
+* [edit_location.html](documentation/img/wfeditl.jpg)
+* [edit_team.html](documentation/img/wfeditt.jpg)
+* [index.html](documentation/img/wfindex.jpg)
+* [profile.html](documentation/img/wfprofile.jpg)
+* [register.html](documentation/img/wfreg.jpg)
+* [login.html](documentation/img/wflogi.jpg)
+* [logout.html](documentation/img/wflogo.jpg)
+* [404.html](documentation/img/wf404.jpg)
+
 
 
 #### [CSS]()
