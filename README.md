@@ -339,9 +339,15 @@ Templates
 ![manual3](documentation/img/Manual-testing3.jpg)
 ![manual4](documentation/img/Manual-testing4.jpg)
 
+### More testing
+- Lighthouse [X](documentation/img)
+- Different explorers
+- Screensizes
+- Letting family, friends and other test the website out
+
 
 ## Marketing
---
+
 
 ### Facebook
 

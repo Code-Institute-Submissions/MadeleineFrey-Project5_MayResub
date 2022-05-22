@@ -129,13 +129,6 @@ a:hover {
     margin: 0 auto;
 }
 
-.img-fp {
-    margin-left: 80px;
-    background: url('/media/home-page5.jpg') no-repeat center center;
-    height: 500px;
-    width: 500px;
-}
-
 .my-mt {
     margin-top: 200px;
 }
@@ -212,5 +205,13 @@ a:hover {
 }
 
 
-/* Button style */
+@media all and (max-width: 1000px) {
+    /* CSS rules here for screens lower than 1000px */
+    
+    .my-card {
+        margin: 0 auto;
+        margin-top: 230px;
+    }
+
+    }
 
