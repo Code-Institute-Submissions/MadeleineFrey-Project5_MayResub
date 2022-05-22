@@ -11,25 +11,32 @@
 
 {% block content %}
 <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7_dtp.css" rel="stylesheet" type="text/css">
-                <style type="text/css">
-                    #mc_embed_signup {
-                        background: #3a6b35;
-                        clear: left;
-                        font: 14px Helvetica, Arial, sans-serif;
-                        width: 600px;
-                        border-radius: 25px;
-                    }
+<style type="text/css">
+    #mc_embed_signup {
+        background: #3a6b35;
+        clear: left;
+        font: 14px Helvetica, Arial, sans-serif;
+        width: 600px;
+        border-radius: 25px;
+    }
 
-                    /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+    /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
 	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-                </style>
+</style>
 <section>
     <div class="container h-100 my-mt">
         <div class="row">
             <div class="col-8">
+                {% if request.user.is_superuser %}
+                <h2 class="display-4 logo-font">
+                    Welcome Admin to Mboxes!
+                </h2>
+                {% else %}
                 <h2 class="display-4 logo-font">
                     Welcome to Mboxes!
                 </h2>
+                {% endif %}
+
             </div>
             <div class="my-5">
                 <h3>
@@ -41,7 +48,7 @@
             <!-- <div class="col-4 img-fp"></div> !-->
             <div>
                 <!-- Begin Mailchimp Signup Form -->
-                
+
                 <div id="mc_embed_signup">
                     <form
                         action="https://herokuapp.us13.list-manage.com/subscribe/post?u=b42bfc4df286fd78d217c225d&amp;id=41ff5f3e6f"
@@ -75,7 +82,7 @@
                         </div>
                     </form>
                 </div>
-                
+
                 <!--End mc_embed_signup-->
             </div>
         </div>

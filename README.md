@@ -208,11 +208,16 @@ If the User is an Admin they can have the option to Add, Edit and delete the inf
     - County 
 - If the user want to update their information they can fill in the form and press “Update Information”
 
+### Known bugs
+- shopping bag quantity "error"
+- Postal Code
 
 ### Future features
 
 - Make subscription plans for users
 - Additional Style to buttons  
+- Sizes on boxes
+- shopping bag quantity "error"
 
 
 
