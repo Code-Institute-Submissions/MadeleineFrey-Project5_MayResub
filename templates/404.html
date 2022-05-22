@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %} | 404 error {% endblock %}
+{% block content %}
+
+<section id="broken">
+   <div class="row my-bag-bg my-card">
+  <div class="col">
+    <div class="col card mb-4  mt-3 left info-box">
+        <div class="wrong">
+            <h4>OH?</h4>
+            <h5>Something seems to be broken.</h5>
+            <p class="d-none d-sm-block">We can’t find the page you were looking for.</p>
+            <p>Did you want to check out our <a class="link_color" href="{% url 'boxes' %}"><strong class="text-dark dark-text">BOXES</strong></a> instead</p>
+        </div>
+    </div>
+  </div>
+</div>
+</section>
+{% endblock %}
