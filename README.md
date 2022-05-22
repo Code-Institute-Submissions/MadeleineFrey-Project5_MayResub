@@ -274,18 +274,11 @@ Templates
 * [logout.html](documentation/img/wflogo.jpg)
 * [404.html](documentation/img/wf404.jpg)
 
-
-
-#### [CSS]()
-
-* profile.css
-* base.css
-
+#### [CSS](documentation/img/css-validation.jpg)
 
 #### Javascript 
 
-* countryfield.js
-* 
+- validated with jshint (With no errors)
 
 #### Python
 
@@ -364,13 +357,14 @@ When all the testing has been done some improvements can be made in the future. 
 
 - Marketing is a big part of every business.
     - One of the marketing strategies used to boost the MBoxes site is Facebook.
+    - MBoxes Facebook Page 
+    ![FB](documentation/img/Fb.jpg)
 
     - MBoxes do also give the site users the option to subscribe to their newsletter. A newsletter is a good way to connect with clients interested in the business.
 
 
 ## Deployment
 ---
-
 
 * Deployment steps followed:
     1. Create the Heroku app .
