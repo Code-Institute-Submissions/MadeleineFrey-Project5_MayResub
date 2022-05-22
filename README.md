@@ -248,7 +248,9 @@ If the User is an Admin they can have the option to Add, Edit and delete the inf
 
 ### Validator Testing
 
-#### [Html]()
+#### [Html](documentation/img/html-validation1.jpg)
+
+- [result](documentation/img/html-validation2.jpg)
 
 Templates 
 * [bag.html](documentation/img/wfbag.jpg)

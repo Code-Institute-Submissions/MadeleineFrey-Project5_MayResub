@@ -17,10 +17,9 @@ body {
 #my-navbar {
     
     min-height: 60px;
-    padding: 0; !important
+    padding: 0 !important;
     
 }
-/* #my-base-header a */
 
 #my-base-header {
     color: #E3B448;
@@ -32,7 +31,6 @@ body {
 
 .my-container {
     margin-top: 56px;
-    
 }
 
 .my-my {
@@ -44,8 +42,6 @@ body {
     margin: 11px;
 }
 
-
-
 .info-box {
     background-color: #3a6b35;
 }
@@ -53,7 +49,6 @@ body {
 .info-box-more {
     padding-top: 50px;
 }
-
 
 a {
     color: #E3B448;
@@ -71,8 +66,7 @@ a:hover {
     margin-top: 120px;
 }
 
-/* taken from video */
-
+/* taken from video (code institute STRIPE VIDEO) */
 
 .overlay {
 	height: 100%;
@@ -116,7 +110,6 @@ a:hover {
     
     margin: 3px;
 
-    padding: 10;
 }
 
 .my-green-text {
@@ -211,7 +204,6 @@ a:hover {
     border-radius: 25px;
 }
 
-
 @media  screen and (max-width: 100px) {
 
     body {
@@ -222,6 +214,5 @@ a:hover {
         font-family: 'Lato';
         margin-top: 130px;
     }
-
 }
 
