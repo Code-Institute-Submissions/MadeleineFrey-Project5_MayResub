@@ -9,20 +9,12 @@
 </div>
 {% endblock %}
 
-{% block content %}
+{% block extra_css %}
 <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7_dtp.css" rel="stylesheet" type="text/css">
-<style type="text/css">
-    #mc_embed_signup {
-        background: #3a6b35;
-        clear: left;
-        font: 14px Helvetica, Arial, sans-serif;
-        width: 600px;
-        border-radius: 25px;
-    }
 
-    /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
-	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-</style>
+{% endblock %}
+
+{% block content %}
 <section>
     <div class="container h-100 my-mt">
         <div class="row">
@@ -43,9 +35,9 @@
                     <a href="#" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3"> Free delivery on
                         orders over ${{ free_delivery_threshold }}! </a>
                     <h3 id="my-shipping"> *else 15$ </h3>
+
                 </h3>
             </div>
-            <!-- <div class="col-4 img-fp"></div> !-->
             <div>
                 <!-- Begin Mailchimp Signup Form -->
 

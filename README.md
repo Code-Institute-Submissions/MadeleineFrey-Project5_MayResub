@@ -5,7 +5,7 @@
 ---
 
 <p>
-MBoxes is a site where you can buy food boxes to make your everyday life so much easier. With the fastest shipping, you can receive your box by tomorrow! stressing about food shopping should never be a daily struggle.
+MBoxes is a site where you can buy food boxes to make your everyday life so much easier. With the fastest shipping, you can receive your box by tomorrow! stressing about food shopping should never be a daily struggle. 
 </p>
 
 ### UX (User Experience)
@@ -98,6 +98,10 @@ Yellow is beneficial because it’s attention-grabbing and conveys feelings of h
 ## Features
 ---
 
+<p>
+Type of site B2C mm
+</p>
+
 #### Home Page
 
 - Navigation bar
@@ -146,8 +150,6 @@ Yellow is beneficial because it’s attention-grabbing and conveys feelings of h
     - Phone
 
 If the User is an Admin they can have the option to Add, Edit and delete the informaition on the page.
-
-
 
 
 ### Login/Logout/Register
@@ -208,17 +210,13 @@ If the User is an Admin they can have the option to Add, Edit and delete the inf
     - County 
 - If the user want to update their information they can fill in the form and press “Update Information”
 
-### Known bugs
-- shopping bag quantity "error"
-- Postal Code
 
 ### Future features
 
 - Make subscription plans for users
 - Additional Style to buttons  
 - Sizes on boxes
-- shopping bag quantity "error"
-
+- 
 
 
 ## Technologies used
@@ -346,10 +344,27 @@ Templates
 - Letting family, friends and other test the website out
 
 
+### Improvements
+<p>
+When all the testing has been done some improvements can be made in the future. This DOES NOT mean that the site is not working correctly they are just some examples to improve the site. The site works great without these improvements implemented.
+</p>
+
+- Background and foreground colors do not have a sufficient contrast ratio.
+    - Some improvements can be made to the color scheme of the site.
+
+- shopping bag quantity "error" (astetic error)
+    - In the users' shopping bag they can go down and pick negative quantity numbers. This does not interfere with changing the quantity. For now, the solution is that if the user selects a negative number the item will be removed.
+
+- Postal Code 
+    - When the user enters their card number an additional field pops up beside the CVC input. The field is not something new the form wants the user to retype the ZIP(postal code). This is not something that interferes with the checkout form It is just bothersome to the user that they have to retype it again.
+
 ## Marketing
 
+- Marketing is a big part of every business.
+    - One of the marketing strategies used to boost the MBoxes site is Facebook.
 
-### Facebook
+    - MBoxes do also give the site users the option to subscribe to their newsletter. A newsletter is a good way to connect with clients interested in the business.
+
 
 ## Deployment
 ---
