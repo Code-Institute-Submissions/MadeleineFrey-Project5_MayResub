@@ -40,10 +40,10 @@ def add_team(request):
         form = TeamForm(request.POST, request.FILES)
         if form.is_valid():
             xteam = form.save()
-            messages.success(request, 'Successfully added product!')
+            messages.success(request, 'Successfully added team member!')
             return redirect(reverse('home'))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')  # noqa: E501
+            messages.error(request, 'Failed to add team member. Please ensure the form is valid.')  # noqa: E501
     else:
         form = TeamForm()
 
@@ -66,10 +66,10 @@ def add_location(request):
         form = LocationForm(request.POST, request.FILES)
         if form.is_valid():
             xlocation = form.save()
-            messages.success(request, 'Successfully added product!')
+            messages.success(request, 'Successfully added location!')
             return redirect(reverse('about_us'))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')  # noqa: E501
+            messages.error(request, 'Failed to add location. Please ensure the form is valid.')  # noqa: E501
     else:
         form = LocationForm()
 
@@ -92,10 +92,10 @@ def add_contact(request):
         form = ContactForm(request.POST, request.FILES)
         if form.is_valid():
             xcontact = form.save()
-            messages.success(request, 'Successfully added product!')
+            messages.success(request, 'Successfully added contact!')
             return redirect(reverse('about_us'))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')  # noqa: E501
+            messages.error(request, 'Failed to add contact. Please ensure the form is valid.')  # noqa: E501
     else:
         form = ContactForm()
 

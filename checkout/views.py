@@ -84,7 +84,7 @@ def checkout(request):
         bag = request.session.get('bag', {})
         if not bag:
             messages.error(request, "There's nothing in your bag at the moment")  # noqa: E501
-            return redirect(reverse('products'))
+            return redirect(reverse('boxes'))
 
         current_bag = bag_contents(request)
         total = current_bag['grand_total']
@@ -136,8 +136,7 @@ def checkout_success(request, order_number):
                 user_profile_form.save()
 
     messages.success(request, f'Order successfully processed! \
-        Your order number is {order_number}. A confirmation \
-        email will be sent to {order.email}.')
+        Your order number is {order_number}.')
 
     if 'bag' in request.session:
         del request.session['bag']
