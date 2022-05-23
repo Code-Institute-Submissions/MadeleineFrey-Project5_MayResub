@@ -52,29 +52,33 @@ MBoxes is a B2C type of e-commerce website that values the customers the most. M
 ### Design
 ---
 
-* Wireframes
-    * [HomePage]
-
-    * [BoxesPage]
-
-    * [DetailBoxPage]
-
-    * [AboutPage]
-
-    * [Login/Logout/Register]
-
-    * [Checkout]
-
-    * [Checkoutsuccess]
-
-    * [Profile]
-
-    * [Admin?]
+* Wireframes 
+    * [bag.html](documentation/img/wfbag.jpg)
+    * [add_box.html](documentation/img/wfadd.jpg)
+    * [boxes.html](documentation/img/wfboxes.jpg)
+    * [detail_box.html](documentation/img/wfdb.jpg)
+    * [edit_box.html](documentation/img/wfeditb.jpg)
+    * [checkout.html](documentation/img/wfc.jpg)
+    * [checkout_success.html](documentation/img/wfcs.jpg)
+    * [about_us.html](documentation/img/wfabout.jpg)
+    * [add_contact.html](documentation/img/wfaddc.jpg)
+    * [add_location.html](documentation/img/wfaddl.jpg)
+    * [add_team.html](documentation/img/wfaddt.jpg)
+    * [edit_contact.html](documentation/img/wfeditc.jpg)
+    * [edit_location.html](documentation/img/wfeditl.jpg)
+    * [edit_team.html](documentation/img/wfeditt.jpg)
+    * [index.html](documentation/img/wfindex.jpg)
+    * [profile.html](documentation/img/wfprofile.jpg)
+    * [register.html](documentation/img/wfreg.jpg)
+    * [login.html](documentation/img/wflogi.jpg)
+    * [logout.html](documentation/img/wflogo.jpg)
+    * [404.html](documentation/img/wf404.jpg)
 
 
 * Mockups
-
-
+    * [Mobile, Iphone5](documentation/img/MockupM.jpg)
+    * [Tablet, Surface Pro7](documentation/img/Mockupt.jpg)
+    * [Desktop, MacBook Pro](documentation/img/MockupD.jpg)
 
 ### Choice of color
 ---
@@ -100,10 +104,6 @@ Yellow is beneficial because it’s attention-grabbing and conveys feelings of h
 
 ## Features
 ---
-
-<p>
-Type of site B2C mm
-</p>
 
 #### Home Page
 
@@ -219,7 +219,6 @@ If the User is an Admin they can have the option to Add, Edit and delete the inf
 - Make subscription plans for users
 - Additional Style to buttons  
 - Sizes on boxes
-- 
 
 
 ## Technologies used
@@ -248,6 +247,10 @@ If the User is an Admin they can have the option to Add, Edit and delete the inf
 
 ## Testing
 ---
+### Database scheme
+
+![DB](documentation/db_diagrams/DatabaseDjpg.jpg)
+
 
 ### Validator Testing
 
@@ -336,10 +339,10 @@ Templates
 ![manual4](documentation/img/Manual-testing4.jpg)
 
 ### More testing
-- Lighthouse [X](documentation/img)
-- Different explorers
-- Screensizes
-- Letting family, friends and other test the website out
+- Lighthouse [X](documentation/img/Lighthouse.jpg)
+- Different explorers (Chrome, Safari, Internet Explorer)
+- Screensizes (Mobile, Tablet, Desktop)
+- Letting family, friends and other test the website out.
 
 
 ### Improvements
@@ -359,7 +362,7 @@ When all the testing has been done some improvements can be made in the future. 
 ## Marketing
 
 - Marketing is a big part of every business.
-    - One of the marketing strategies used to boost the MBoxes site is Facebook.
+    - One of the marketing strategies used to boost the MBoxes site is Facebook. In The about us page are a Link to facebook.
     - MBoxes Facebook Page 
     ![FB](documentation/img/Fb.jpg)
 
@@ -526,4 +529,5 @@ The Codeinstitute slack channel has been a massive help with small problems. Dis
     * [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Models)
     * [Bootstrap](https://getbootstrap.com/docs/4.6/getting-started/introduction/)
     * [Django](https://docs.djangoproject.com/en/4.0/)
+    * [CyberChimps](https://cyberchimps.com/blog/e-commerce-websites/)
 

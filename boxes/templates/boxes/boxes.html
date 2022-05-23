@@ -18,7 +18,7 @@
                 <p>Each boxes contains 1 week of dinner meals for one person (7meals) depending
                      on what protein fits your lifestyle 
                     you can pick and choose between all our categories.
-                     Don't forget to check out our special boxes!</p>
+                     Don't forget to check out our special boxes! (Register an account to save your order history)</p>
             </div>
         </div>
     </div>
@@ -39,7 +39,6 @@
                                 <div class="card box-div" style="width: 18rem;">
                                    {% if box.image.url %}
                                         <img src="{{ box.image.url}}" class="card-img-top" alt="{{ box.name }}" style=" height: 14rem;">
-                                
                                     {% endif %}
                                     <div class="card-body">
                                        <h3> <a href="{% url 'box_detail' box.id %}"> {{ box.name }} </a> </h3>

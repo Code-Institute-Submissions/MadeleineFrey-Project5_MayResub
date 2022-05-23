@@ -8,6 +8,7 @@ body {
     height: calc(100vh - 164px);
     color: #E3B448;
     font-family: 'Lato';
+    margin-top: 125px;
 }
 
 #my-base-header {

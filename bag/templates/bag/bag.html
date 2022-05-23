@@ -86,10 +86,12 @@
                                                                 </div>
                                                             </form>
 
-                                                            <a class="update-link text-info bag-item-quantity my-button-hover" role="button"><small
+                                                            <a class="update-link text-info bag-item-quantity my-button-hover"
+                                                                role="button"><small
                                                                     class="my-text-color">Update</small></a>
                                                             <a class="remove-box text-danger float-right bag-item-quantity"
-                                                                id="remove_{{ box.box_id }}" role="button"><small>Remove</small></a>
+                                                                id="remove_{{ box.box_id }}"
+                                                                role="button"><small>Remove</small></a>
                                                         </div>
                                                         <div class="cart_box_price cart_info_col">
                                                             <div class="cart_box_title">Price</div>
@@ -107,7 +109,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     {% endfor %}
 
                     <div>
@@ -154,7 +156,7 @@
                         <!-- add style to button -->
                         <a href="{% url 'boxes' %}" class="btn btn-outline-black btn-lg">
                             <span class="icon">
-                                
+
                             </span>
                             <span class="text-uppercase my-text-color">Keep Shopping</span>
                         </a>
