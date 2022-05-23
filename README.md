@@ -5,7 +5,10 @@
 ---
 
 <p>
-MBoxes is a site where you can buy food boxes to make your everyday life so much easier. With the fastest shipping, you can receive your box by tomorrow! stressing about food shopping should never be a daily struggle. 
+MBoxes is a B2C type of e-commerce website that values the customers the most. Making dinner for you or your family is in everyone's daily life and MBoxes want to make it easier for everyone. No stress going to the store or coming up with different recipes every day we will help you.
+<p>
+ With the fastest shipping, you can receive your box by tomorrow! 
+</p>
 </p>
 
 ### UX (User Experience)
